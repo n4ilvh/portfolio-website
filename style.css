@@ -21,18 +21,17 @@ body{
 }
 
 header{
-    margin-top: 20px;
+
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 9%;
     background-color: transparent;
     filter: drop-shadow(10px);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 5;
 }
 
 .logo{
@@ -49,7 +48,21 @@ header{
     transform: scale(1.1);
 }
 
-nav a{
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: black;
+    height: 50px;
+}
+
+.nav-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav a {
     font-size: 1.8rem;
     color: white;
     margin-left: 4rem;
@@ -83,3 +96,23 @@ nav a.active{
 
   }
 
+  canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#three-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#three-container canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
