@@ -77,6 +77,7 @@ loader.load(
   (gltf) => {
     const computer = gltf.scene;
     computer.scale.set(0.5, 0.5, 0.5);
+    computer.position.set(0, -1.1, 4.2);
     scene.add(computer);
   },
   undefined,
