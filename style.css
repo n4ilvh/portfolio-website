@@ -21,7 +21,6 @@ body{
 }
 
 header{
-
     position: fixed;
     top: 0;
     left: 0;
@@ -53,7 +52,7 @@ nav {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background: black;
+    background: transparent;
     height: 50px;
 }
 
@@ -71,7 +70,18 @@ nav a {
     font-weight: 100;
     letter-spacing: 2px;
     transition: 0.3s ease;
+    position: relative;
+    display: inline-block;
+    min-width: 120px;
+    max-width: 120px;
+    text-align: center;
 }
+
+nav a span {
+    display: inline-block;
+    position: relative;
+}
+
 
 nav a:hover,
 nav a.active{
