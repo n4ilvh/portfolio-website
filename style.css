@@ -103,13 +103,17 @@ nav a.active{
   section{
     min-height: 100vh;
     padding: 5rem 9% 5rem;
-
+    background: transparent;
+    z-index: 0;
+    align-items: center;
+    justify-content: center;
+    display: block;
   }
 
   canvas{
-    position: fixed;
-    top: 0;
-    left: 0;
+    display: block;
+    position: absolute;
+    z-index: 0;
 }
 
 section {
@@ -121,12 +125,12 @@ section {
 }
 
 #three-container {
-    width: 100vw;
-    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
 }
 
 #three-container canvas {

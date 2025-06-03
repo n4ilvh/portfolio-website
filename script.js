@@ -40,9 +40,12 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 
-const renderer = new THREE.WebGLRenderer({ alpha: true });
+const renderer = new THREE.WebGLRenderer({ 
+  alpha: true,
+  antialias: true,
+  premultipliedAlpha: false
+});
 renderer.setClearColor(0x000000, 0);  // black color, 0 opacity = transparent
-
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('three-container').appendChild(renderer.domElement);
 
@@ -163,8 +166,19 @@ loader.load(
 );
 
 // Post-processing setup
-const composer = new THREE.EffectComposer(renderer);
+const renderTarget = new THREE.WebGLRenderTarget(window.innerWidth, window.innerHeight, {
+  minFilter: THREE.LinearFilter,
+  magFilter: THREE.LinearFilter,
+  format: THREE.RGBAFormat,
+  stencilBuffer: false,
+  alpha: true
+});
+const composer = new THREE.EffectComposer(renderer, renderTarget);
 const renderPass = new THREE.RenderPass(scene, camera);
+renderPass.clearColor = new THREE.Color(0x000000);
+renderPass.clearAlpha = 0;
+composer.addPass(renderPass);
+
 const bloomPass = new THREE.UnrealBloomPass(
   new THREE.Vector2(window.innerWidth, window.innerHeight),
   0.5,  // strength
@@ -172,7 +186,7 @@ const bloomPass = new THREE.UnrealBloomPass(
   0.6  // threshold
 );
 
-composer.addPass(renderPass);
+
 composer.addPass(bloomPass);
 
 // Camera position
@@ -182,11 +196,12 @@ camera.position.z = 5;
 function animate() {
   requestAnimationFrame(animate);
 
+    renderer.clear();
   // Update time uniform for shader
   screenMaterial.uniforms.time.value = performance.now() / 1000;
 
   // Render with post-processing
-  composer.render();
+  renderer.render(scene, camera);
 }
 animate();
 
