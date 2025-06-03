@@ -112,13 +112,21 @@ nav a.active{
     left: 0;
 }
 
+section {
+    background: transparent;
+    z-index: 0;
+    align-items: center;
+    justify-content: center;
+    display: block;
+}
+
 #three-container {
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: 1;
 }
 
 #three-container canvas {

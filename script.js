@@ -1,5 +1,5 @@
-// Main site
-// Text encoding/decoding effect
+//* Main site *//
+// // Text encoding/decoding effect
 const navLinks = document.querySelectorAll('nav a:not(.active)');
 
 navLinks.forEach(link => {
@@ -37,10 +37,7 @@ navLinks.forEach(link => {
 });
 
 
-// Three.js 
-
-
-
+//* Three.js *//
 // Set up scene, camera, renderer (as you already have)
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -54,19 +51,25 @@ scene.add(light);
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
 directionalLight.position.set(0, 1, 1);
 scene.add(directionalLight);
+const helper = new
+THREE.DirectionalLightHelper(directionalLight, 5);
+scene.add(helper);
 
-// Load your GLTF model
-const loader = new THREE.GLTFLoader(); // Now available globally
+const dracoLoader = new THREE.DRACOLoader();
+dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/'); // Google's CDN
 
+// Load the GLTF model
+const loader = new THREE.GLTFLoader();
+loader.setDRACOLoader(dracoLoader);
 
-
-// Load model
+// Load computer model
 loader.load(
   'models/sci-fi_computer/scene.gltf',
   (gltf) => {
     const computer = gltf.scene;
     scene.add(computer);
     computer.scale.set(0.5, 0.5, 0.5); // Adjust scale
+    // computer.position.set(0, -1, 4);
   },
   undefined,
   (error) => console.error('Error loading model:', error)
