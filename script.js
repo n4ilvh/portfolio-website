@@ -41,6 +41,8 @@ const camera = new THREE.PerspectiveCamera(
 );
 
 const renderer = new THREE.WebGLRenderer({ alpha: true });
+renderer.setClearColor(0x000000, 0);  // black color, 0 opacity = transparent
+
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('three-container').appendChild(renderer.domElement);
 
@@ -144,7 +146,7 @@ loader.load(
   (gltf) => {
     const computer = gltf.scene;
     computer.scale.set(0.5, 0.5, 0.5);
-    computer.position.set(0, -1.1, 4.2);
+    computer.position.set(0, -1.1, 1);
     scene.add(computer);
 
     computer.traverse((child) => {
@@ -165,9 +167,9 @@ const composer = new THREE.EffectComposer(renderer);
 const renderPass = new THREE.RenderPass(scene, camera);
 const bloomPass = new THREE.UnrealBloomPass(
   new THREE.Vector2(window.innerWidth, window.innerHeight),
-  1.5,  // strength
-  0.4,  // radius
-  0.85  // threshold
+  0.5,  // strength
+  0.05,  // radius
+  0.6  // threshold
 );
 
 composer.addPass(renderPass);
