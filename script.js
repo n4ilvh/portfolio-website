@@ -36,9 +36,12 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
-  0.1,
+  0.01,
   1000
 );
+
+let targetZoom = 1;
+let scrollProgress = 0;
 
 const renderer = new THREE.WebGLRenderer({ 
   alpha: true,
@@ -50,13 +53,12 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('three-container').appendChild(renderer.domElement);
 
 // Lights
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
-directionalLight.position.set(0, 1, 1);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+directionalLight.position.set(0, 1, 4);
 scene.add(directionalLight);
-scene.add(new THREE.DirectionalLightHelper(directionalLight, 5));
 
 //* Loading System *//
 const loadingScreen = document.getElementById('loading-screen');
@@ -121,7 +123,7 @@ const screenMaterial = new THREE.ShaderMaterial({
       float flicker = 0.98 + 0.02 * sin(time * 15.0);
 
       // Vertical moving scanlines
-      float scanline = sin((vUv.y + time * 0.1) * 600.0) * 0.04;
+      float scanline = sin((vUv.y + time * 0.1) * 100.0) * 0.02;
 
       // Barrel distortion (CRT curve)
       vec2 uv = vUv - 0.5;
@@ -148,9 +150,26 @@ loader.load(
   'models/sci-fi_computer/scene.gltf',
   (gltf) => {
     const computer = gltf.scene;
-    computer.scale.set(0.5, 0.5, 0.5);
-    computer.position.set(0, -1.1, 1);
     scene.add(computer);
+
+    const bbox = new THREE.Box3().setFromObject(computer);
+    const center = bbox.getCenter(new THREE.Vector3());
+    const size = bbox.getSize(new THREE.Vector3());
+
+    computer.position.x -= center.x;
+    computer.position.y -= center.y-0.55;
+    computer.position.z -= center.z-1.39;
+
+    const maxDim = Math.max(size.x, size.y, size.z);
+    const scale = 2.0 / maxDim;
+    computer.scale.set(scale, scale, scale);
+
+    camera.position.set(0, 0, 0.01); // Close-up after load
+    camera.lookAt(0, 0, 0);
+
+    
+
+    // Position camera based on model size
 
     computer.traverse((child) => {
       if (child.isMesh && child.name.toLowerCase().includes('screen')) {
@@ -196,10 +215,12 @@ camera.position.z = 5;
 function animate() {
   requestAnimationFrame(animate);
 
-    renderer.clear();
-  // Update time uniform for shader
+  renderer.clear();
   screenMaterial.uniforms.time.value = performance.now() / 1000;
 
+  const zoomOutZ = 1.8;
+  const zoom = 1 + (zoomOutZ - 1) * scrollProgress;
+  camera.position.z = zoom;
   // Render with post-processing
   renderer.render(scene, camera);
 }
@@ -209,10 +230,20 @@ animate();
 window.addEventListener('resize', () => {
   const width = window.innerWidth;
   const height = window.innerHeight;
-
-  renderer.setSize(width, height);
-  composer.setSize(width, height);
-
+  
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
+  renderer.setSize(width, height);
+  
+  // For post-processing
+  if(composer) {
+    composer.setSize(width, height);
+  }
+});
+
+// Scroll listener
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const maxScroll = window.innerHeight;
+  scrollProgress = Math.min(scrollTop / maxScroll, 1); // Clamp 0 to 1
 });
