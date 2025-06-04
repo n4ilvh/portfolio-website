@@ -52,6 +52,98 @@ renderer.setClearColor(0x000000, 0);  // black color, 0 opacity = transparent
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('three-container').appendChild(renderer.domElement);
 
+const particlesGeometry = new THREE.BufferGeometry();
+const particleCount = 1500;
+
+// Create random particle positions
+const posArray = new Float32Array(particleCount * 3);
+for(let i = 0; i < particleCount * 3; i++) {
+  posArray[i] = (Math.random() - 0.5) * 50;
+}
+
+// Create particle connections (lines)
+const lineGeometry = new THREE.BufferGeometry();
+const linePositions = new Float32Array(particleCount * 3 * 2);
+
+particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+const particlesMaterial = new THREE.PointsMaterial({
+  size: 0.1,
+  color: 0x688358,
+  transparent: true,
+  opacity: 0.8
+});
+
+const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+scene.add(particlesMesh);
+
+// Animation logic
+function animateParticles() {
+  const positions = particlesGeometry.attributes.position.array;
+  
+  for(let i = 0; i < particleCount; i++) {
+    // Gentle floating movement
+    positions[i * 3 + 1] += Math.sin(Date.now() * 0.001 + i) * 0.001;
+    
+    // Mouse interaction
+    const distanceToMouse = Math.sqrt(
+      Math.pow(mouseX - positions[i * 3], 2) + 
+      Math.pow(mouseY - positions[i * 3 + 1], 2)
+    );
+    
+    if(distanceToMouse < 5) {
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 2;
+    }
+  }
+  
+  particlesGeometry.attributes.position.needsUpdate = true;
+  updateConnections();
+}
+
+// Mouse interaction
+let mouseX = 0, mouseY = 0;
+window.addEventListener('mousemove', (e) => {
+  mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+  mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+});
+
+
+const lineMaterial = new THREE.LineBasicMaterial({
+  color: 0x3a4a3f,
+  transparent: true,
+  opacity: 0.3
+});
+
+let lineMesh;
+
+function updateConnections() {
+  if(lineMesh) scene.remove(lineMesh);
+  
+  const positions = particlesGeometry.attributes.position.array;
+  const connections = [];
+  
+  // Create connections between nearby particles
+  for(let i = 0; i < particleCount; i++) {
+    for(let j = i + 1; j < particleCount; j++) {
+      const distance = Math.sqrt(
+        Math.pow(positions[i*3] - positions[j*3], 2) +
+        Math.pow(positions[i*3+1] - positions[j*3+1], 2) +
+        Math.pow(positions[i*3+2] - positions[j*3+2], 2)
+      );
+      
+      if(distance < 2.5) {
+        connections.push(positions[i*3], positions[i*3+1], positions[i*3+2]);
+        connections.push(positions[j*3], positions[j*3+1], positions[j*3+2]);
+      }
+    }
+  }
+  
+  lineGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(connections), 3));
+  lineMesh = new THREE.LineSegments(lineGeometry, lineMaterial);
+  scene.add(lineMesh);
+}
+
+
 // Lights
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
