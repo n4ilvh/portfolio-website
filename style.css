@@ -193,40 +193,7 @@ section {
 
 
 
-/* ABOUT */
-.about-content {
-  position: fixed;
-  top: 100px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  gap: 70px;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  backdrop-filter: blur(10px);
-  z-index: 1;
-  padding: 15px 0;
-}
 
-.about-header {
-  font-size: 30px;
-}
-
-.about-desc1 {
-  display: block;
-  justify-items:  left;
-  width: max-content;
-}
-
-.about-desc2 {
-  display: block;
-  justify-items: right;
-  font-size: 25px;
-  overflow: auto;
-  width: 400px;
-  margin-left: auto;
-}
 
 .dither-container {
   width: 100%;

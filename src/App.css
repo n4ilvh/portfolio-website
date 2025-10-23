@@ -10,6 +10,7 @@ html, body, #root {
   height: 100%;
   overflow: hidden;
   background: #ccb89d;
+  align-items: center;
 }
 
 .app {
@@ -26,7 +27,6 @@ html, body, #root {
   width: 100%;
   height: 100%;
   z-index: 0;
-  pointer-events: none; /* lets clicks pass through */
 }
 
 /* Foreground content */
@@ -34,8 +34,18 @@ html, body, #root {
   position: relative;
   z-index: 10;
   color: white;
-  text-align: center;
   padding-top: 100px;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 header h1 {

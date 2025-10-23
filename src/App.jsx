@@ -24,7 +24,6 @@ function App() {
           <h1>Nailah Abel</h1>
           <p>Computer Science Student</p>
         </header>
-
         <nav>
           <ul>
             <li><a href="about.html" className="keycap">About</a></li>
