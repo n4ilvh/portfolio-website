@@ -94,7 +94,7 @@ void main() {
     f -= 0.5 * effect;
   }
   // background colour
-  vec3 baseColor = vec3(0.3, 0.4, 0.3); // dark purple background
+  vec3 baseColor = vec3(0.3, 0.4, 0.3); 
   vec3 col = mix(baseColor, waveColor, f);
 
   gl_FragColor = vec4(col, 1.0);

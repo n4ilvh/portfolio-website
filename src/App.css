@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
     font-family: KiwiSoda;
     src: url(../fonts/KiwiSoda.ttf) format('truetype');
@@ -48,13 +50,6 @@ header {
   height: 100%;
 }
 
-header h1 {
-  font-size: 6rem;
-  letter-spacing: 2px;
-  color: #7b854c;
-  font-family: 'KiwiSoda', sans-serif;
-  user-select: none;
-}
 
 /* Nav cleanup */
 nav ul {
