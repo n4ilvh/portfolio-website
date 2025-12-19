@@ -26,12 +26,12 @@ function App() {
         <div className="content">
           <header>
             <h1>Nailah Abel</h1>
-            <p>Computer Science Student</p>
+            <p>2nd Year Computer Science Student</p>
           </header>
 
           <nav>
             <ul>
-              <li><Link to="/">Home</Link></li>
+              <li className="nav-item"><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/about">Projects</Link></li>
               <li><Link to="/about">Services</Link></li>
