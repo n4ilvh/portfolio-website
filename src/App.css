@@ -36,7 +36,7 @@ html, body, #root {
   position: relative;
   z-index: 10;
   color: white;
-  padding-top: 100px;
+  padding-top: 3.2rem;;
   height: 100%;
   width: 100%;
 }

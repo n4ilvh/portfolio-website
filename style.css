@@ -40,8 +40,6 @@ header p {
 nav {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  padding: 1.2rem;
   position: fixed;
   top: 0;
   width: 100%;

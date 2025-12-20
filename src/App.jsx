@@ -24,26 +24,27 @@ function App() {
 
         {/* Foreground / Content */}
         <div className="content">
-          <header>
-            <h1>Nailah Abel</h1>
-            <p>2nd Year Computer Science Student</p>
-          </header>
-
           <nav>
-            <ul>
-              <li className="nav-item"><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/about">Projects</Link></li>
-              <li><Link to="/about">Services</Link></li>
-              <li><Link to="/about">Contact</Link></li>
-            </ul>
+            <div className="nav-item-container">
+              <div className="nav-item"><Link to="/">Home</Link></div>
+              <div className="nav-item"><Link to="/about">About</Link></div>
+              <li className="nav-item"><Link to="/about">Projects</Link></li>
+              <li className="nav-item"><Link to="/about">Services</Link></li>
+              <li className="nav-item"><Link to="/about">Contact</Link></li>
+            </div>
           </nav>
 
-          {/* Routes placed here, just like in the test version */}
-          <Routes>
-            <Route path="/" element={<h2>Home Page</h2>} />
-            <Route path="/about" element={<About />} />
-          </Routes>
+            <div className="test">
+
+            
+          <div className="header">
+            <h1>Nailah Abel</h1>
+            <p>2nd Year Computer Science Student</p>
+            <div></div>
+          </div>
+
+          </div>
+
         </div>
       </div>
     </Router>
