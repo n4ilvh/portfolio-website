@@ -2,6 +2,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Dither from "./Dither";
 import "./App.css";
 import About from "./About";
+import Projects from "./Projects";
+// import Services from "./Services";
+import Contact from "./Contact";
 
 function App() {
   return (
@@ -28,25 +31,27 @@ function App() {
             <div className="nav-item-container">
               <div className="nav-item"><Link to="/">Home</Link></div>
               <div className="nav-item"><Link to="/about">About</Link></div>
-              <li className="nav-item"><Link to="/about">Projects</Link></li>
-              <li className="nav-item"><Link to="/about">Services</Link></li>
-              <li className="nav-item"><Link to="/about">Contact</Link></li>
+              <div className="nav-item"><Link to="/projects">Projects</Link></div>
+              {/* <div className="nav-item"><Link to="/services">Services</Link></div> */}
+              <div className="nav-item"><Link to="/contact">Contact</Link></div>
             </div>
           </nav>
-
-            <div className="test">
-
-            
-          <div className="header">
-            <h1>Nailah Abel</h1>
-            <p>2nd Year Computer Science Student</p>
-            <div></div>
-          </div>
-
-          </div>
-
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="header">
+                  <h1>Nailah Abel</h1>
+                  <p>2nd Year Computer Science Student</p>
+                </div>
+              }
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
         </div>
-      </div>
+      </div> 
     </Router>
   );
 }
