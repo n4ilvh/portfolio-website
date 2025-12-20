@@ -40,9 +40,11 @@ function App() {
             <Route
               path="/"
               element={
-                <div className="header">
-                  <h1>Nailah Abel</h1>
-                  <p>2nd Year Computer Science Student</p>
+                <div className="page-container">
+                  <div className="header">
+                    <h1>Nailah Abel</h1>
+                    <p>Computer Science Student</p>
+                  </div>
                 </div>
               }
             />

@@ -22,15 +22,7 @@
   -ms-user-select: none;
 }
 
-.content {
-  position: relative;
-  z-index: 1; 
-  margin: 0px;
-  padding: 0px;
-  gap: 0px;
-  width: 100%;
-  height: 100%;
-}
+
 
 canvas {
   display: block;
@@ -352,5 +344,48 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   display: flex;
-  background-color: red;
+}
+
+
+/* Contacts */
+.contact-links {
+  display: flex;
+  gap: 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.contact-links a {
+  position: relative;
+  color: #9fb3a6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* default brackets */
+.contact-links a::before {
+  content: "[";
+  margin-right: 0.1ch;
+  transition: content 0.3s ease;
+}
+
+.contact-links a::after {
+  content: "]";
+  margin-left: 0.1ch;
+  transition: content 0.3s ease;
+}
+
+/* hover brackets change */
+.contact-links a:hover::before {
+  content: '["';
+}
+
+.contact-links a:hover::after {
+  content: '"]';
+}
+
+/* optional: color change on hover */
+.contact-links a:hover {
+  color: #f0f5f2;
 }
