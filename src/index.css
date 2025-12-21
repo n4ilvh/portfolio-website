@@ -145,8 +145,6 @@ nav {
   
 }
 
-
-
 .contact-links {
   display: flex;
   width: 100%;
@@ -156,7 +154,6 @@ nav {
   justify-content: center;
   align-items: center;
 }
-
 
 .contact-links a {
   position: relative;
@@ -169,13 +166,13 @@ nav {
 
 /* default brackets */
 .contact-links a::before {
-  content: "[\2009\2009";
+  content: "[   ";
   margin-right: 0.1ch;
   transition: content 0.3s ease;
 }
 
 .contact-links a::after {
-  content: "\2009\2009]";
+  content: "   ]";
   margin-left: 0.1ch;
   transition: content 0.3s ease;
  
