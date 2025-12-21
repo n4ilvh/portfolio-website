@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
+
 @font-face {
-    font-family: KiwiSoda;
-    src: url(../fonts/KiwiSoda.ttf) format('truetype');
+  font-family: KiwiSoda;
+  src: url(../fonts/KiwiSoda.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: VCR;
+  src: url(../fonts/VCR_OSD_MONO_1.001.ttf) format('truetype');
 }
 
 html, body, #root {
@@ -39,14 +45,4 @@ html, body, #root {
   color: white;
   height: 100%;
   width: 100%;
-}
-
-
-/* Nav cleanup */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0;
 }

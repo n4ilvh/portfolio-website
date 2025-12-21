@@ -4,7 +4,6 @@ import "./App.css";
 import About from "./About";
 import Projects from "./Projects";
 // import Services from "./Services";
-import Contact from "./Contact";
 
 function App() {
   return (
@@ -33,7 +32,6 @@ function App() {
               <div className="nav-item"><Link to="/about">About</Link></div>
               <div className="nav-item"><Link to="/projects">Projects</Link></div>
               {/* <div className="nav-item"><Link to="/services">Services</Link></div> */}
-              <div className="nav-item"><Link to="/contact">Contact</Link></div>
             </div>
           </nav>
           <Routes>
@@ -42,15 +40,24 @@ function App() {
               element={
                 <div className="page-container">
                   <div className="header">
-                    <h1>Nailah Abel</h1>
+                    <div>Nailah Abel</div>
                     <p>Computer Science Student</p>
                   </div>
+                  <div className="contact-container">
+                      <div className="contact-links">
+                          <a href="https://github.com/n4ilvh" target="_blank" rel="noopener noreferrer">github</a>
+                          <a href="https://www.linkedin.com/in/nailah-abel/" target="_blank" rel="noopener noreferrer">linkedin</a>
+                          <a href="mailto:nailah.abel@gmail.com" target="_blank" rel="noopener noreferrer">email</a>
+                          <a href="./media/Nailah Abel Resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
+                          <a href="https://monkeytype.com/profile/ju6lyy" target="_blank" rel="noopener noreferrer">monkeytype</a>
+                      </div>
+                  </div>
+                    
                 </div>
               }
             />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
       </div> 
