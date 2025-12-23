@@ -51,8 +51,7 @@ function App() {
                           <a href="./Nailah Abel Resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
                           <a href="https://monkeytype.com/profile/ju6lyy" target="_blank" rel="noopener noreferrer">monkeytype</a>
                       </div>
-                  </div>
-                    
+                  </div>  
                 </div>
               }
             />
