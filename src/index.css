@@ -9,7 +9,7 @@
   --ink: #1a1a1a;
 
   --moss: #527e59;
-  --accent-soft: #b7b7a4;
+  --accent-soft: #6f7871;
 }
 
 
@@ -249,9 +249,25 @@ section {
   font-family: 'VCR';
 }
 
+.about-container {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+  align-items: center;
+  width: 85%;
+  height: 50%;
+  gap: 8%;
+}
+
+.about-image-container {
+  display: flex;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+
 .about-img {
-  height: 30vh;
-  width: 30vh;
+  height: 100%;
+  width: 100%;
   object-position: center top;
   border-radius: 15%;
   display: flex;
@@ -259,26 +275,23 @@ section {
   align-items: center;
 }
 
-.about-container {
+.about-info {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  /* background-color: red; */
-  align-items: center;
-  width: 75%;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .about-title {
   font-size: xx-large;
-  color: var(--moss);
+  color: var(--accent-soft);
 }
 
-.about-info {
-  display: flex;
-  flex-direction: column;
-  /* background-color: blue; */
+.about-text {
   justify-content: center;
-  width: max-content;
+  align-items: center;
 }
 
 .dither-container {
