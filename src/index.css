@@ -193,8 +193,6 @@ nav {
   color: #527e59;
 }
 
-
-
 img {
   width: 400px;
   height: auto;
@@ -208,41 +206,8 @@ section {
   margin: auto;
 }
 
-.about {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-}
 
-.about-text {
-  flex: 1 1 400px;
-}
 
-.about-text h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #4caf50;
-}
-
-.about-text p {
-  line-height: 1.6;
-  color: #ccc;
-}
-
-.about-img {
-  flex: 1 1 300px;
-  display: flex;
-  justify-content: center;
-}
-
-.about-img img {
-  width: 250px;
-  border-radius: 50%;
-  filter: grayscale(100%) contrast(120%) brightness(90%);
-  box-shadow: 0 0 30px rgba(76, 175, 80, 0.4);
-}
 
 .skills {
   display: grid;
@@ -273,38 +238,47 @@ section {
 
 
 /* ABOUT */
-.about-content {
-  position: fixed;
-  top: 100px;
-  left: 0;
-  width: 100%;
+.about {
+  display: flex;
   height: 100%;
-  gap: 70px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-family: 'VCR';
+}
+
+.about-img {
+  height: 30vh;
+  width: 30vh;
+  object-position: center top;
+  border-radius: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* background-color: red; */
+  align-items: center;
+  width: 75%;
+}
+
+.about-title {
+  font-size: xx-large;
+  color: var(--moss);
+}
+
+.about-info {
   display: flex;
   flex-direction: column;
-  align-self: center;
-  backdrop-filter: blur(10px);
-  z-index: 1;
-  padding: 15px 0;
-}
-
-.about-header {
-  font-size: 30px;
-}
-
-.about-desc1 {
-  display: block;
-  justify-items:  left;
+  /* background-color: blue; */
+  justify-content: center;
   width: max-content;
-}
-
-.about-desc2 {
-  display: block;
-  justify-items: right;
-  font-size: 25px;
-  overflow: auto;
-  width: 400px;
-  margin-left: auto;
 }
 
 .dither-container {
