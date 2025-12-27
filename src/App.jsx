@@ -49,7 +49,7 @@ function App() {
                           <a href="https://www.linkedin.com/in/nailah-abel/" target="_blank" rel="noopener noreferrer">linkedin</a>
                           <a href="mailto:nailah.abel@gmail.com" target="_blank" rel="noopener noreferrer">email</a>
                           <a href="./resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
-                          <a href="https://monkeytype.com/profile/ju6lyy" target="_blank" rel="noopener noreferrer">monkeytype</a>
+                          <a href="https://monkeytype.com/profile/n4ilvh" target="_blank" rel="noopener noreferrer">monkeytype</a>
                       </div>
                   </div>  
                 </div>

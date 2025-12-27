@@ -252,11 +252,10 @@ section {
 .about-container {
   display: flex;
   flex-direction: row;
-  background-color: red;
   align-items: center;
   width: 85%;
   height: 50%;
-  gap: 8%;
+  gap: 2vh;
 }
 
 .about-image-container {
@@ -282,11 +281,19 @@ section {
   width: 100%;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  justify-content: center;
 }
 
 .about-title {
   font-size: xx-large;
   color: var(--accent-soft);
+  height: 100%;
+  width: 100%;
+  justify-content: start;
+  align-items: center;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 
 .about-text {

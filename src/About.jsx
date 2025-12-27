@@ -17,7 +17,6 @@ function About() {
             <div>&nbsp;&nbsp;languages: ["Java", "Python", "C", "HTML, CSS"],</div>
             <div>&nbsp;&nbsp;frameworks: ["React", "Three.js"],</div>
             <div>&nbsp;&nbsp;tools: ["Git", "Vite"],</div>
-            <div>&nbsp;&nbsp;focus: ["Creative Coding", "Interactive Systems"]</div>
             <div>&#125;</div>
           </div>
         </div>
