@@ -206,9 +206,6 @@ section {
   margin: auto;
 }
 
-
-
-
 .skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -235,7 +232,6 @@ section {
   display: block;
   color: #4caf50;
 }
-
 
 /* ABOUT */
 .about {
@@ -285,15 +281,22 @@ section {
 }
 
 .about-title {
-  font-size: xx-large;
+  font-size: 30vw;
+  transform: scaleY(2.3);
+  letter-spacing: 2vw;
+  line-height: 1;
+  bottom: 2rem;
   color: var(--accent-soft);
-  height: 100%;
-  width: 100%;
-  justify-content: start;
+  min-height: 100vh;
+  width: 99vw;
+  border: solid black 3px;
+  justify-content: center;
   align-items: center;
   display: flex;
-  padding-top: 10px;
-  padding-bottom: 30px;
+  z-index: -10;
+  position: fixed;
+  opacity: 50%;
+  background-color: red;
 }
 
 .about-text {
