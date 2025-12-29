@@ -242,7 +242,7 @@ nav {
 }
 
 .about-title {
-  font-size: 4vw;
+  font-size: clamp(1.85rem, 0.5vw, 1.05rem);
   font-family: 'KiwiSoda', sans-serif;
   line-height: 1;
   color: var(--pine);
@@ -251,7 +251,7 @@ nav {
 }
 
 .about-text {
-  font-size: 1.25vw;
+  font-size: clamp(0.85rem, 0.5vw, 1.05rem);
   display: flex;
   color: #34583a;
   flex-direction: column;
