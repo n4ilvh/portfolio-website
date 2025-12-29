@@ -21,6 +21,7 @@
   user-select: none;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none;
+  
 }
 
 canvas {
@@ -209,13 +210,9 @@ nav {
   flex-direction: row;
   align-items: center;
   width: 85%;
-  height: 50%;
-  gap: 2vh;
   border: 1px #c9c9c9 solid;
   overflow: hidden;
-    backdrop-filter: blur(2px);
-
-
+  backdrop-filter: blur(2px);
 }
 
 .about-image-container {
@@ -232,7 +229,7 @@ nav {
   height: 100%;
   object-fit: cover;
   object-position: center top; /* crops bottom */
-  padding: 15%;
+  padding: 10%;
 }
 
 .about-barcode-img {
@@ -245,35 +242,27 @@ nav {
 }
 
 .about-title {
-  font-size: 30vw;
-  transform: scaleY(2.5);
-  letter-spacing: 2vw;
+  font-size: 4vw;
+  font-family: 'KiwiSoda', sans-serif;
   line-height: 1;
-  bottom: 1vh;
-  color: var(--accent-soft);
-  min-height: 100vh;
-  width: 99vw;
-  justify-content: center;
-  align-items: center;
+  color: var(--pine);
+  width: 9vw;
   display: flex;
-  z-index: -10;
-  position: fixed;
-  opacity: 50%;
-  padding-left: 5vw;
 }
 
 .about-text {
-  font-size: 10%;
+  font-size: 1.25vw;
   display: flex;
   color: #34583a;
   flex-direction: column;
   height: 100%;
-  width: 600px;
+  width: 100%;
   justify-content: center;
-  background-color: white;
 }
 
-
+.about-text-highlight {
+  color: var(--accent-soft);
+}
 
 .dither-container {
   width: 100%;
