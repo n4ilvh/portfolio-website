@@ -9,6 +9,7 @@
   --ink: #1a1a1a;
 
   --moss: #527e59;
+  --pine: #34583a;
   --accent-soft: #6f7871;
 }
 
@@ -190,48 +191,10 @@ nav {
 
 /* optional: color change on hover */
 .contact-links a:hover {
-  color: #527e59;
+  color: var(--pine);
 }
 
-img {
-  width: 400px;
-  height: auto;
-  filter: url(#halftone);
-  object-fit: cover;
-}
 
-section {
-  padding: 80px 10%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-
-.skill {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 20px;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(5px);
-}
-
-.skill:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
-}
-
-.skill i {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  display: block;
-  color: #4caf50;
-}
 
 /* ABOUT */
 .about {
@@ -249,6 +212,7 @@ section {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   width: 85%;
   height: 50%;
   gap: 2vh;
@@ -256,7 +220,7 @@ section {
 
 .about-image-container {
   display: flex;
-  height: 100%;
+  width: 20%;
   aspect-ratio: 1/1;
 }
 
@@ -272,9 +236,9 @@ section {
 
 .about-info {
   display: flex;
+  color: #34583a;
   flex-direction: column;
   min-height: 100%;
-  width: 100%;
   overflow-wrap: break-word;
   word-wrap: break-word;
   justify-content: center;
@@ -282,26 +246,26 @@ section {
 
 .about-title {
   font-size: 30vw;
-  transform: scaleY(2.3);
+  transform: scaleY(2.5);
   letter-spacing: 2vw;
   line-height: 1;
-  bottom: 2rem;
+  bottom: 1vh;
   color: var(--accent-soft);
   min-height: 100vh;
   width: 99vw;
-  border: solid black 3px;
   justify-content: center;
   align-items: center;
   display: flex;
   z-index: -10;
   position: fixed;
   opacity: 50%;
-  background-color: red;
+  padding-left: 5vw;
 }
 
 .about-text {
   justify-content: center;
   align-items: center;
+  font-size: 30px;
 }
 
 .dither-container {
