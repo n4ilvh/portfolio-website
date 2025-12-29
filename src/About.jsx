@@ -3,15 +3,15 @@ import Barcode from "../media/barcode.webp";
 function About() {
   return (
     <div className="about"> 
-    <div className="about-image-container">
-          <img src={Barcode} alt="description" className="about-img"/>
-        </div>
+   
+      {/* <img src={Barcode} alt="description" className="about-barcode-img"/> */}
+
       {/* <div className="about-title">About</div> */}
       <div className="about-container">
-        {/* <div className="about-image-container">
+        <div className="about-image-container">
           <img src={Image} alt="description" className="about-img"/>
-        </div> */}
-        <div className="about-info">
+        </div>
+        
           <div className="about-text">
             <div>location: "Toronto, Canada"</div>
             <div>born: 2006</div>
@@ -22,8 +22,8 @@ function About() {
             <div>&nbsp;&nbsp;frameworks: ["React", "Three.js"],</div>
             <div>&nbsp;&nbsp;tools: ["Git", "Vite"],</div>
             <div>&#125;</div>
-            //I like computers, clicky keyboards and creatings things that mean something
-          </div>
+            {/* //I like computers, clicky keyboards and creatings things that mean something */}
+          
         </div>
       </div>
     </div>
