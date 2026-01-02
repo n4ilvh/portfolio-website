@@ -252,8 +252,8 @@ nav {
   flex-direction: column;
   height: 100%;
   width: 100%;
-  margin-top: 10%;
-  justify-content: start;
+  justify-content: center;
+  margin-top: auto;
 }
 
 
@@ -265,17 +265,22 @@ nav {
   /* Reorder items so image comes first */
   .about-image-container {
     order: -1; /* Moves image to top */
-    margin-bottom: 3rem;
+    margin-top: 3rem;
+    background-color: blue;
+    height: 100%;
+    position: bottom; 
+        align-items: flex-end;
+
   }
   
   .about-text {
     order: 1; /* Moves text below */
-    margin-bottom: 5rem;
-      font-size: clamp(0.7rem, 0.5vw, 1.05rem);
+    font-size: clamp(0.7rem, 0.5vw, 1.05rem);
   }
 
   .about-container {
     height: 70vh;
+    
   }
 
   .interests-desktop {
