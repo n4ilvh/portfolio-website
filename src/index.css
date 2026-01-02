@@ -215,6 +215,10 @@ nav {
   gap: 2rem;
   font-family: 'VCR';
 }
+ 
+.interests-mobile { /* default desktop behaviour */
+  display: none;
+}
 
 .about-container {
   display: flex;
@@ -267,10 +271,19 @@ nav {
   .about-text {
     order: 1; /* Moves text below */
     margin-bottom: 5rem;
+      font-size: clamp(0.7rem, 0.5vw, 1.05rem);
   }
 
   .about-container {
     height: 70vh;
+  }
+
+  .interests-desktop {
+    display: none;
+  }
+
+  .interests-mobile {
+    display: block;
   }
 }
 
