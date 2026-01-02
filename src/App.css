@@ -19,6 +19,15 @@ html, body, #root {
   overflow: hidden;
   background: #9da594;
   align-items: center;
+  font-size: 100%; /* Base for rem units */
+  -webkit-text-size-adjust: 100%; /* Prevent iOS text size adjust on zoom */
+  text-size-adjust: 100%;
+}
+
+.nav-item, .header div {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .app {

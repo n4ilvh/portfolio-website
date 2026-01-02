@@ -11,8 +11,19 @@
   --moss: #527e59;
   --pine: #34583a;
   --accent-soft: #656e67;
-}
 
+  --font-size-sm: clamp(0.8rem, 2vw, 1rem);
+  --font-size-base: clamp(1rem, 2.5vw, 1.2rem);
+  --font-size-lg: clamp(1.5rem, 4vw, 2rem);
+  --font-size-xl: clamp(2rem, 6vw, 3.5rem);
+  --font-size-xxl: clamp(3rem, 8vw, 6rem);
+  
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+}
 
 * {
   margin: 0;
@@ -21,7 +32,7 @@
   user-select: none;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none;
-  
+  -webkit-tap-highlight-color: transparent;
 }
 
 canvas {
@@ -41,7 +52,7 @@ canvas {
 }
 
 .header div {
-  font-size: 6rem;
+  font-size: clamp(4rem, 15vw, 6rem);
   letter-spacing: 2px;
   line-height: 0.8;
   margin-top: 10%;
@@ -207,12 +218,74 @@ nav {
 
 .about-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   width: 85%;
+  height: 60vh;
   border: 1px #c9c9c9 solid;
   overflow: hidden;
   backdrop-filter: blur(2px);
+}
+
+.about-title {
+  font-size: clamp(4.5rem, 0.5vw, 1.05rem);
+  font-family: 'KiwiSoda', sans-serif;
+  line-height: 1;
+  color: var(--pine);
+  width: 100%;
+  height: 18%;
+  display: flex;
+  text-align: start;
+  margin-top: 3%;
+  margin-left: 4.5%;
+  position: fixed;
+}
+
+.about-text {
+  font-size: clamp(0.99rem, 0.5vw, 1.05rem);
+  display: flex;
+  color: #34583a;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  margin-top: 10%;
+  justify-content: start;
+}
+
+
+@media (max-width: 767px) {
+  .about-info {
+    flex-direction: column;
+  }
+  
+  /* Reorder items so image comes first */
+  .about-image-container {
+    order: -1; /* Moves image to top */
+    margin-bottom: 3rem;
+  }
+  
+  .about-text {
+    order: 1; /* Moves text below */
+    margin-bottom: 5rem;
+  }
+
+  .about-container {
+    height: 70vh;
+  }
+}
+
+.about-info {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.about-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center top; /* crops bottom */
+  padding: 10%;
 }
 
 .about-image-container {
@@ -224,41 +297,16 @@ nav {
   align-items: center;
 }
 
-.about-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top; /* crops bottom */
-  padding: 10%;
-}
-
 .about-barcode-img {
-  height: 25vh;
+  height: 30vh;
   position: fixed;
   z-index: -10;
   display: flex;
-  bottom: -5vh;
+  bottom: -10vh;
   left: 100px;
+  color: red;
 }
 
-.about-title {
-  font-size: clamp(1.85rem, 0.5vw, 1.05rem);
-  font-family: 'KiwiSoda', sans-serif;
-  line-height: 1;
-  color: var(--pine);
-  width: 9vw;
-  display: flex;
-}
-
-.about-text {
-  font-size: clamp(0.85rem, 0.5vw, 1.05rem);
-  display: flex;
-  color: #34583a;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-}
 
 .about-text-highlight {
   color: var(--accent-soft);
@@ -290,8 +338,6 @@ body {
   color: #e0e0e0;
 }
 
-
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -308,9 +354,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -340,5 +388,3 @@ button:focus-visible {
   justify-content: center;
   display: flex;
 }
-
-
