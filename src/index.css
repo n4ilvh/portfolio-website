@@ -232,7 +232,7 @@ nav {
 }
 
 .about-title {
-  font-size: clamp(4.5rem, 0.5vw, 1.05rem);
+  font-size: calc(1rem + 5vw);
   font-family: 'KiwiSoda', sans-serif;
   line-height: 1;
   color: var(--pine);
@@ -246,16 +246,15 @@ nav {
 }
 
 .about-text {
-  font-size: clamp(0.99rem, 0.5vw, 1.05rem);
+  font-size: calc(20% + 1vw);
   display: flex;
   color: #34583a;
   flex-direction: column;
-  height: 100%;
+  padding-top: 25px;
   width: 100%;
+  height: 100%;
   justify-content: center;
-  margin-top: auto;
 }
-
 
 @media (max-width: 767px) {
   .about-info {
@@ -265,22 +264,26 @@ nav {
   /* Reorder items so image comes first */
   .about-image-container {
     order: -1; /* Moves image to top */
-    margin-top: 3rem;
-    background-color: blue;
+    width: 100%;
     height: 100%;
-    position: bottom; 
-        align-items: flex-end;
-
   }
-  
+
+  .about-img {
+    align-self: end;
+  }
+
   .about-text {
     order: 1; /* Moves text below */
-    font-size: clamp(0.7rem, 0.5vw, 1.05rem);
+    font-size: calc(30% + 1vw);
+    height: calc(60% + 1vw);
+    justify-content: end;
+    padding-left: 15px;
   }
 
   .about-container {
     height: 70vh;
-    
+    display: flex;
+    flex-direction: column;
   }
 
   .interests-desktop {
@@ -290,12 +293,17 @@ nav {
   .interests-mobile {
     display: block;
   }
+
+  .about-title{
+   height: 70px;
+  }
 }
 
 .about-info {
   height: 100%;
   width: 100%;
   display: flex;
+  
 }
 
 .about-img {
@@ -311,7 +319,7 @@ nav {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 
