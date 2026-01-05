@@ -222,25 +222,31 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 85%;
   height: 60vh;
-  border: 1px #c9c9c9 solid;
+  border: 1.5px #c9c9c9 solid;
   overflow: hidden;
   backdrop-filter: blur(2px);
+  background-color: #cdfed81d;
+}
+
+.about-info {
+  display: flex;
+  align-self: center;
 }
 
 .about-title {
+  display: flex;
   font-size: calc(1rem + 5vw);
   font-family: 'KiwiSoda', sans-serif;
   line-height: 1;
   color: var(--pine);
   width: 100%;
-  height: 18%;
-  display: flex;
   text-align: start;
   margin-top: 3%;
-  margin-left: 4.5%;
-  position: fixed;
+  margin-left: 40px;
+  align-items: end;
 }
 
 .about-text {
@@ -252,6 +258,7 @@ nav {
   width: 100%;
   height: 100%;
   justify-content: center;
+  align-self: center;
 }
 
 .about-image-container {
@@ -288,8 +295,6 @@ nav {
     align-items: center;
   }
 
-
-
   .about-img {
     width: calc(50vh - 1vw);
     aspect-ratio: 1/1;
@@ -301,9 +306,10 @@ nav {
   .about-text {
     order: 1; /* Moves text below */
     font-size: calc(30% + 1vw);
-    height: calc(60% + 1vw);
     justify-content: end;
     padding-left: 15px;
+    background-color: blue;
+    
   }
 
   .about-container {
@@ -312,26 +318,20 @@ nav {
     flex-direction: column;
   }
 
-
-  /* .interests-desktop {
+  .interests-desktop {
     display: none;
   }
 
   .interests-mobile {
     display: block;
-  } */
+  }
 
   .about-title{
-   height: calc(48vh - 7vw);
+   height: 60%;
+   font-size: calc(1rem + 5vw);
    align-items: end;
    order: -1;
   }
-}
-
-.about-info {
-  height: 100%;
-  width: 100%;
-  display: flex;
 }
 
 .about-barcode-img {
@@ -343,7 +343,6 @@ nav {
   left: 100px;
   color: red;
 }
-
 
 .about-text-highlight {
   color: var(--accent-soft);

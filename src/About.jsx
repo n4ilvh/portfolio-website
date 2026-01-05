@@ -7,7 +7,6 @@ function About() {
       {/* <img src={Barcode} alt="description" className="about-barcode-img"/> */}
       <div className="about-container">
         <div className="about-title">about.me</div>
-        {/* <div className="about-underline">++++++++++++++</div>  */}
         <div className="about-info">
           <div className="about-image-container">
             <img src={Image} alt="description" className="about-img"/>
