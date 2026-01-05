@@ -22,45 +22,11 @@ function About() {
               </span>
               ]
             </div>
-            <div className="interests-mobile">
-              <div>interests: [</div>
-                <div className="about-indent">
-                  <span className="about-text-highlight">&nbsp;&nbsp;"gaming",</span>
-                </div>
-                <div className="about-indent">
-                  <span className="about-text-highlight">&nbsp;&nbsp;"music",</span>
-                </div>
-                <div className="about-indent">
-                  <span className="about-text-highlight">&nbsp;&nbsp;"mechanical keyboards",</span>
-                </div>
-                <div className="about-indent">
-                  <span className="about-text-highlight">&nbsp;&nbsp;"electric guitar",</span>
-                </div>
-                <div className="about-indent">
-                  <span className="about-text-highlight">&nbsp;&nbsp;"basketball"</span>
-                </div>
-                <div>]</div>
-            </div>
             <div>skills: &#123;</div>
-            <div>&nbsp;&nbsp;languages: [<span className="about-text-highlight">"Java", "Python", "C", "HTML, CSS"</span>],</div>
+            <div>&nbsp;&nbsp;languages: [<span className="about-text-highlight">"Java", "Python", "C", "HTML", "CSS"</span>],</div>
             <div>&nbsp;&nbsp;frameworks: [<span className="about-text-highlight">"React", "Three.js"</span>],</div>
             <div>&nbsp;&nbsp;tools: [<span className="about-text-highlight">"Git", "Vite" </span>],</div>
-            <div className="interests-desktop">
-              <div>&nbsp;&nbsp;applications: [<span className="about-text-highlight">"Adobe Photoshop", "Adobe Premiere Pro", "Adobe After Effects" </span>]</div>
-            </div>
-            <div className="interests-mobile">
-                <div>applications: [</div>
-                <div className="about-indent">
-                  <span className="about-text-highlight">&nbsp;&nbsp;"Adobe Photoshop",</span>
-                </div>
-                <div className="about-indent">
-                  <span className="about-text-highlight">&nbsp;&nbsp;"Adobe Premiere Pro",</span>
-                </div>
-                <div className="about-indent">
-                  <span className="about-text-highlight">&nbsp;&nbsp;"Adobe After Effects"</span>
-                </div>
-                <div>]</div>
-            </div>
+            <div>&nbsp;&nbsp;applications: [<span className="about-text-highlight">"Adobe Photoshop", "Adobe Premiere Pro", "Adobe After Effects" </span>]</div>
             <div>&#125;</div>
             {/* //I like computers, clicky keyboards and creatings things that mean something */}
           </div>

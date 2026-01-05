@@ -225,7 +225,7 @@ nav {
   justify-content: center;
   width: 85%;
   height: 60vh;
-  border: 1.5px #c9c9c9 solid;
+  border: 1px #e4e4e4 solid;
   overflow: hidden;
   backdrop-filter: blur(2px);
   background-color: #cdfed81d;
@@ -282,6 +282,9 @@ nav {
 @media (max-width: 1123px) {
   .about-info {
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
   }
   
   /* Reorder items so image comes first */
@@ -299,7 +302,7 @@ nav {
     width: calc(50vh - 1vw);
     aspect-ratio: 1/1;
     object-fit: cover;
-    object-position: center top; /* crops bottom */
+    object-position: center top;
     padding: 10%;
   }
 
@@ -308,14 +311,16 @@ nav {
     font-size: calc(30% + 1vw);
     justify-content: end;
     padding-left: 15px;
-    background-color: blue;
-    
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+    text-align: start;
   }
 
   .about-container {
     height: 70vh;
     display: flex;
-    flex-direction: column;
+    
   }
 
   .interests-desktop {
@@ -327,10 +332,8 @@ nav {
   }
 
   .about-title{
-   height: 60%;
-   font-size: calc(1rem + 5vw);
-   align-items: end;
-   order: -1;
+   background-color: red;
+   height: 10px;
   }
 }
 
