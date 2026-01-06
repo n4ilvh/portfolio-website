@@ -236,7 +236,9 @@ nav {
 .title-container {
   display: flex;
   flex-direction: column;
-  align-self: start;
+  align-self: center;
+  margin: 0px;
+  padding: 0px;
 }
 
 .about-title {
@@ -245,20 +247,12 @@ nav {
   font-size: calc(1rem + 5vw);
   font-family: 'KiwiSoda', sans-serif;
   line-height: 80%;
-  color: #A4A58Dff;
+  color: var(--pine);
   text-align: start;
   margin-top: 3%;
-  margin-left: 40px;
+  margin-left: 0px;
   align-items: end;
 }
-
-
-/* --khaki-beige: #BCB3A5ff;
---dry-sage: #A4A58Dff;
---dry-sage-2: #B9B7A1ff;
---muted-teal: #889C81ff;
---palm-leaf: #8C906Eff; */
-
 
 .about-underline {
   display: flex;
@@ -268,7 +262,7 @@ nav {
   line-height: 40%;
   width: fit-content;
   text-align: start;
-  margin-left: 40px;
+  margin-left: 0px;
   align-items: end;
 }
 
@@ -318,38 +312,42 @@ nav {
   .about-info {
     flex-direction: column;
     width: 100%;
-    height: 100%;
-    background-color: red;
+    height: 80%;
   }
   
   /* Reorder items so image comes first */
   .about-image-container {
-    width: 10%;
-    height: 10%;
-    align-self: flex-start;
-    justify-content: center;
+    width: 100%;
+    height: fit-content;
     display: flex;
+    flex-direction: row;
+    background-color: red;
     justify-content: center;
+    padding-left: 15px;
     align-items: center;
-    background-color: blue;
   }
 
   .about-img {
-    width: calc(50vh - 1vw);
+    width: 10%;
+    display: flex;
+    max-height: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
     object-position: center top;
-    padding: 10%;
+    padding: 0%;
+    align-self: center;
   }
 
   .about-text {
-    order: 1; /* Moves text below */
+    order: 1;
     font-size: calc(30% + 1vw);
     justify-content: end;
     padding-left: 15px;
     width: 100%;
-    height: 100%;
+    height: 30vw;
     text-align: start;
+    background-color: blue;
+
   }
 
   .about-container {
@@ -369,9 +367,9 @@ nav {
   .about-title{
    height: 100%;
    width: 100%;
-   background-color: yellow;
    padding: 0px;
   }
+
 }
 
 .about-barcode-img {
