@@ -6,7 +6,10 @@ function About() {
     <div className="about"> 
       {/* <img src={Barcode} alt="description" className="about-barcode-img"/> */}
       <div className="about-container">
-        <div className="about-title">about.me</div>
+        <div className="title-container">
+          <div className="about-title">About Me</div>
+        <div className="about-underline">+-+-+-+-+</div>
+        </div>
         <div className="about-info">
           <div className="about-image-container">
             <img src={Image} alt="description" className="about-img"/>
@@ -26,7 +29,7 @@ function About() {
             <div>&nbsp;&nbsp;languages: [<span className="about-text-highlight">"Java", "Python", "C", "HTML", "CSS"</span>],</div>
             <div>&nbsp;&nbsp;frameworks: [<span className="about-text-highlight">"React", "Three.js"</span>],</div>
             <div>&nbsp;&nbsp;tools: [<span className="about-text-highlight">"Git", "Vite" </span>],</div>
-            <div>&nbsp;&nbsp;applications: [<span className="about-text-highlight">"Adobe Photoshop", "Adobe Premiere Pro", "Adobe After Effects" </span>]</div>
+            <div>&nbsp;&nbsp;software: [<span className="about-text-highlight">"Adobe Photoshop", "Adobe Premiere Pro", "Adobe After Effects"</span>]</div>
             <div>&#125;</div>
             {/* //I like computers, clicky keyboards and creatings things that mean something */}
           </div>
