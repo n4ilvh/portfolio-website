@@ -9,7 +9,7 @@
   --ink: #1a1a1a;
 
   --moss: #527e59;
-  --pine: #34583a;
+  --pine: rgb(52, 88, 58);
   --accent-soft: #656e67;
 
   --font-size-sm: clamp(0.8rem, 2vw, 1rem);
@@ -65,7 +65,7 @@ canvas {
   font-weight: 100;
   color: #527e59;
   font-family: 'VCR';
-  font-weight: 500;
+  font-weight: 100;
   line-height: 1.4;
   letter-spacing: 0.01em;
   align-items: center;
@@ -82,7 +82,6 @@ nav {
   z-index: 1000;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 100;
-  font-style: normal;
   margin: 0px;
   flex-wrap: wrap;
 }
@@ -213,7 +212,7 @@ nav {
   gap: 2rem;
   font-family: 'VCR';
 }
- 
+
 .interests-mobile { /* default desktop behaviour */
   display: none;
 }
@@ -224,8 +223,8 @@ nav {
   align-items: center;
   justify-content: center;
   width: 85%;
-  height: 60vh;
-  overflow: hidden;
+  height: 100%;
+  overflow: visible;
 }
 
 .about-info {
@@ -260,7 +259,7 @@ nav {
   justify-content: center;
   font-size: calc(1rem + 5vw);
   font-family: 'KiwiSoda', sans-serif;
-  color: #8C906Eff;
+  color: rgb(96, 97, 90);
   line-height: 40%;
   width: fit-content;
   text-align: start;
@@ -270,14 +269,21 @@ nav {
 
 .about-text {
   font-size: calc(20% + 1vw);
-  display: flex;
-  color: #34583a;
+  font-weight: 50;
+  color: #c9cac5;
   flex-direction: column;
   padding-top: 25px;
   width: 100%;
   height: 100%;
   justify-content: center;
   align-self: center;
+
+}
+
+.about-text-highlight {
+  color: var(--pine);
+  font-weight: 700;
+
 }
 
 .about-image-container {
@@ -345,14 +351,14 @@ nav {
     padding-bottom: 12px;
   }
 
+  
+
   .about-container {
     height: 70vh;
     display: flex;
   }
 
-  .interests-desktop {
-    display: none;
-  }
+
 
   .interests-mobile {
     display: block;
@@ -366,18 +372,29 @@ nav {
 
 }
 
-.about-barcode-img {
-  height: 30vh;
+@media (max-width: 1123px) {
+
+}
+
+.left-blob {
+  height: 110%;
   position: fixed;
   z-index: -10;
   display: flex;
+  justify-content: center;
   bottom: -10vh;
-  left: 100px;
-  color: red;
+  align-items: center;
+  left: 0px;
+  object-fit: cover;
+  opacity: 50%;
 }
 
-.about-text-highlight {
-  color: var(--accent-soft);
+
+
+/* PROJECTS */
+.projects {
+  width: 100%;
+  height: 100%;
 }
 
 .dither-container {
