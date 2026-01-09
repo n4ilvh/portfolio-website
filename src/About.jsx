@@ -12,7 +12,6 @@ function About() {
       <div className="about-container">
         <div className="title-container">
           <div className="about-title">About Me</div>
-        <div className="about-underline">+-+-+-+-+</div>
         </div>
         <div className="about-info">
           <div className="about-image-container">
