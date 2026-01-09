@@ -230,14 +230,17 @@ nav {
 .about-info {
   display: flex;
   align-self: center;
+
 }
 
 .title-container {
   display: flex;
-  flex-direction: column;
   align-self: center;
+  justify-content: center;
   margin: 0px;
+  width: 50%;
   padding: 0px;
+  border-bottom: 2px solid #2f4f3a55;
 }
 
 .about-title {
@@ -254,30 +257,17 @@ nav {
   justify-content: center;
 }
 
-.about-underline {
-  display: flex;
-  justify-content: center;
-  font-size: calc(1rem + 5vw);
-  font-family: 'KiwiSoda', sans-serif;
-  color: rgb(96, 97, 90);
-  line-height: 40%;
-  width: fit-content;
-  text-align: start;
-  margin-left: 0px;
-  align-items: end;
-}
-
 .about-text {
   font-size: calc(20% + 1vw);
   font-weight: 50;
-  color: #c9cac5;
+  color: var(--pine);
   flex-direction: column;
   padding-top: 25px;
   width: 100%;
   height: 100%;
   justify-content: center;
   align-self: center;
-
+  
 }
 
 .about-text-highlight {
@@ -351,7 +341,16 @@ nav {
     padding-bottom: 12px;
   }
 
-  
+  .title-container {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin: 0px;
+    width: 40%;
+    padding-bottom: 10%;
+    padding: 0px;
+    border-bottom: 0px solid #2f4f3a00;
+  }
 
   .about-container {
     height: 70vh;
@@ -392,8 +391,6 @@ nav {
 
 
 /* PROJECTS */
-
-
 .projects-layout {
   display: flex;
   height: 100vh;
