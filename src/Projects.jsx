@@ -21,7 +21,7 @@ const projects = [
   {
     id: 3,
     title: "Phasmophobia Simulator",
-    desc: "Raspberry Pi facial recognition + water gun.",
+    desc: "A final project for one of my university courses.",
     links: {
       github: "https://github.com/n4ilvh/phasmophobia-simulator",
     },
@@ -37,7 +37,7 @@ const projects = [
     {
     id: 5,
     title: "Opp Detector",
-    desc: "A Google Chrome extension that inverts website background colours to create a dark mode effect.",
+    desc: "A hackathon project.",
     links: {
       devpost: "https://devpost.com/software/opp-detector",
     },
