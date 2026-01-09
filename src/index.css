@@ -210,7 +210,8 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  font-family: 'VCR';
+  font-family: "VCR";
+  font-weight: 100;
 }
 
 .interests-mobile { /* default desktop behaviour */
@@ -282,7 +283,9 @@ nav {
 
 .about-text-highlight {
   color: var(--pine);
+  font-family: "VCR";
   font-weight: 700;
+  letter-spacing: 1px;
 
 }
 
