@@ -55,7 +55,7 @@ export default function Projects() {
 
   return (
     <div className="projects">
-      <div className="about-title">Projects</div>
+      <div className="projects-title">Projects</div>
         <section className="projects-layout">
       {/* LEFT LIST */}
       <div className="projects-list">
