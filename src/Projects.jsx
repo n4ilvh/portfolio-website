@@ -4,7 +4,7 @@ const projects = [
   {
     id: 1,
     title: "Portfolio Site",
-    desc: "My personal website to display projects.",
+    desc: "A multithreaded C simulation inspired by Phasmophobia. Designed to practice concurrency, shared memory, and entity stateHunters and ghosts operate independently using pthreads and mutexes. Final project for Systems Programming.",
     links: {
       github: "https://github.com/n4ilvh/portfolio-website",
     },

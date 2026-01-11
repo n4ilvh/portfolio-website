@@ -214,7 +214,7 @@ nav {
   font-weight: 100;
 }
 
-.interests-mobile { /* default desktop behaviour */
+.skills-mobile { /* default desktop behaviour */
   display: none;
 }
 
@@ -256,6 +256,7 @@ nav {
   margin-left: 0px;
   align-items: end;
   justify-content: center;
+  text-align: center;
 }
 
 .about-text {
@@ -323,91 +324,9 @@ nav {
   background-size: 5px, 5px, 5px 5px;
 }
 
-@media (max-width: 1123px) {
-  .about-info {
-    flex-direction: column;
-    width: 100%;
-    height: 80%;
-  }
-  
-  /* Reorder items so image comes first */
-  .about-image-container {
-    width: 100%;
-    height: calc(20% + 10vw);
-    justify-content: center;
-    align-items: center;
-  }
-
-  .about-img {
-    width: calc(12vw + 7vh);
-    display: flex;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    object-position: center top;
-    padding: 0%;
-    align-self: center;
-  }
-
-  .img-border {
- position: absolute;
-  pointer-events: none; /* important */
-  object-fit: cover; /* or contain */
-  width: calc(12vw + 7vh);
-  padding: 0%;
-}
-
-  .about-text {
-    font-size: calc(30% + 1vw);
-    justify-content: center;
-    padding-left: 15px;
-    width: 100%;
-    height: calc(40% + 1vw);
-    background-color: none;
-    padding-bottom: 12px;
-  }
-
-  .about-text-highlight {
-    color: var(--pine);
-    font-weight: 700;
-    font-family: 'rainyhearts', sans-serif;
-    font-size: calc(40% + 1vw);
-    word-spacing: 2px;
-
-  }
-
-  .title-container {
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    margin: 0px;
-    width: 40%;
-    padding-bottom: 10%;
-    padding: 0px;
-    border-bottom: 0px solid #2f4f3a00;
-  }
-
-  .about-container {
-    height: 70vh;
-    display: flex;
-  }
 
 
 
-  .interests-mobile {
-    display: block;
-  }
-
-  .about-title{
-   height: 100%;
-   width: 100%;
-   padding: 0px;
-  }
-
-}
-
-@media (max-width: 1123px) {
-
-}
 
 .left-blob {
   height: 110%;
@@ -445,7 +364,7 @@ nav {
 
 .projects-layout {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   padding: 6rem;
   gap: 4rem;
@@ -589,12 +508,118 @@ body {
   display: flex;
 }
 
+/* ABOUT (mobile view) */
+@media (max-width: 1123px) {
+  .about-info {
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+  }
+  
+  /* Reorder items so image comes first */
+  .about-image-container {
+    width: 100%;
+    height: calc(20% + 10vw);
+    justify-content: center;
+    align-items: center;
+  }
+  .skills-mobile { /* default desktop behaviour */
+  display: none;
+}
+
+  .about-img {
+    width: calc(12vw + 7vh);
+    display: flex;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center top;
+    padding: 0%;
+    align-self: center;
+  }
+
+  .img-border {
+ position: absolute;
+  pointer-events: none; /* important */
+  object-fit: cover; /* or contain */
+  width: calc(12vw + 7vh);
+  padding: 0%;
+}
+
+  .about-text {
+    font-size: calc(30% + 1vw);
+    justify-content: center;
+    padding-left: 15px;
+    width: 100%;
+    height: calc(40% + 1vw);
+    background-color: none;
+    padding-bottom: 12px;
+  }
+
+  .about-text-highlight {
+    color: var(--pine);
+    font-weight: 700;
+    font-family: 'rainyhearts', sans-serif;
+    font-size: calc(40% + 1vw);
+    word-spacing: 2px;
+
+  }
+
+  .title-container {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin: 0px;
+    width: 40%;
+    padding-bottom: 10%;
+    padding: 0px;
+    border-bottom: 0px solid #2f4f3a00;
+  }
+
+  .about-container {
+    height: 70vh;
+    display: flex;
+  }
+
+  .about-title{
+   height: 100%;
+   width: 100%;
+   padding: 0px;
+  }
+
+}
+
+
+/* ABOUT (small mobile view) */
+@media (max-width: 510px) {
+
+  .about-text {
+    font-size: calc(34% + 1vw);
+    justify-content: center;
+    padding-left: 15px;
+    width: 100%;
+    height: calc(40% + 1vw);
+    background-color: none;
+    padding-bottom: 12px;
+  }
+
+  .skills-mobile {
+    display: block;
+  }
+
+  .skills-desktop {
+    display: none;
+  }
+}
+
+/* PROJECTS (mobile view */
 @media (max-width: 768px) {
   .projects-layout {
     flex-direction: column;
     height: auto;
+    min-height: unset;
     padding: 2rem 1.2rem;
     gap: 2rem;
+
   }
 
   .projects-list {

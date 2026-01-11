@@ -25,25 +25,47 @@ function About() {
             <div className="noise-shadow">location: <span className="about-text-highlight">"Toronto, Canada"</span></div>
             <div>born: <span className="about-text-highlight">2006</span></div>
             <div>school: <span className="about-text-highlight">"Carleton University"</span></div>
-            <div className="interests-desktop">
+            <div className="skills-desktop">
               interests: [
               <span className="about-text-highlight">
                 "gaming", "music", "mechanical keyboards", "electric guitar", "basketball"
               </span>
               ]
-            </div>
-            <div>skills: &#123;</div>
-
             
-            <div>&nbsp;&nbsp;languages: [<span className="about-text-highlight">"Java", "Python", "C", "HTML", "CSS"</span>],</div>
-            <div>&nbsp;&nbsp;frameworks: [<span className="about-text-highlight">"React", "Three.js"</span>],</div>
-            <div>&nbsp;&nbsp;tools: [<span className="about-text-highlight">"Git", "Vite" </span>],</div>
-            <div>&nbsp;&nbsp;software: [<span className="about-text-highlight">"Adobe Photoshop", "Adobe Premiere Pro", "Adobe After Effects"</span>]</div>
+              <div>skills: &#123;</div>
+              <div>&nbsp;&nbsp;languages: [<span className="about-text-highlight">"Java", "Python", "C", "HTML", "CSS"</span>],</div>
+              <div>&nbsp;&nbsp;frameworks: [<span className="about-text-highlight">"React", "Three.js"</span>],</div>
+              <div>&nbsp;&nbsp;tools: [<span className="about-text-highlight">"Git", "Vite" </span>],</div>
+              <div>&nbsp;&nbsp;software: [<span className="about-text-highlight">"Adobe Photoshop", "Adobe Premiere Pro", "Adobe After Effects"</span>]</div>
+            </div>
 
-
-
-
-
+            <div className="skills-mobile">
+              interests: [
+              <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"gaming",</span>
+              <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"music",</span>
+              <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"mechanical keyboards",</span>
+              <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"electric guitar",</span>
+              <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"basketball",</span>
+              <br></br>     
+              ]
+            
+              <div>skills: &#123;</div>
+              <div>&nbsp;&nbsp;languages: [
+                <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"Java", "</span>
+                <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"Python",</span>
+                <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"C",</span>
+                <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"HTML",</span>
+                <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"CSS"</span></div>
+              &nbsp;&nbsp;]
+              <div>&nbsp;&nbsp;frameworks: [<span className="about-text-highlight">"React", "Three.js"</span>],</div>
+              <div>&nbsp;&nbsp;tools: [<span className="about-text-highlight">"Git", "Vite" </span>],</div>
+              <div>&nbsp;&nbsp;software: [
+                <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"Adobe Photoshop",</span>
+                <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"Adobe Premiere Pro",</span>
+                <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"Adobe After Effects"</span>
+              <br></br>&nbsp;&nbsp;]
+              </div>
+            </div>
             <div>&#125;</div>
             {/* //I like computers, clicky keyboards and creatings things that mean something */}
           </div>
