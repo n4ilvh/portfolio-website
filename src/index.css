@@ -231,14 +231,17 @@ nav {
 .about-info {
   display: flex;
   align-self: center;
+
 }
 
 .title-container {
   display: flex;
-  flex-direction: column;
   align-self: center;
+  justify-content: center;
   margin: 0px;
+  width: 50%;
   padding: 0px;
+  border-bottom: 2px solid #2f4f3a55;
 }
 
 .about-title {
@@ -255,30 +258,18 @@ nav {
   justify-content: center;
 }
 
-.about-underline {
-  display: flex;
-  justify-content: center;
-  font-size: calc(1rem + 5vw);
-  font-family: 'KiwiSoda', sans-serif;
-  color: rgb(96, 97, 90);
-  line-height: 40%;
-  width: fit-content;
-  text-align: start;
-  margin-left: 0px;
-  align-items: end;
-}
-
 .about-text {
-  font-size: calc(20% + 1vw);
+  font-size: calc(30% + 1vw);
   font-weight: 50;
-  color: #c9cac5;
+  color: var(--pine);
   flex-direction: column;
   padding-top: 25px;
   width: 100%;
   height: 100%;
   justify-content: center;
   align-self: center;
-
+  font-weight: 700;
+  
 }
 
 .about-text-highlight {
@@ -286,6 +277,9 @@ nav {
   font-family: "VCR";
   font-weight: 700;
   letter-spacing: 1px;
+  font-family: 'rainyhearts', sans-serif;
+  font-size: calc(40% + 1vw);
+  word-spacing: 2px;
 
 }
 
@@ -296,6 +290,16 @@ nav {
   display: flex;
   justify-content: start;
   align-items: center;
+    position: relative;
+
+}
+
+.img-border {
+ position: absolute;
+  pointer-events: none; /* important */
+  object-fit: cover; /* or contain */
+  width: 100%;
+  padding: 10%;
 }
 
 .about-img {
@@ -344,6 +348,14 @@ nav {
     align-self: center;
   }
 
+  .img-border {
+ position: absolute;
+  pointer-events: none; /* important */
+  object-fit: cover; /* or contain */
+  width: calc(12vw + 7vh);
+  padding: 0%;
+}
+
   .about-text {
     font-size: calc(30% + 1vw);
     justify-content: center;
@@ -354,7 +366,25 @@ nav {
     padding-bottom: 12px;
   }
 
-  
+  .about-text-highlight {
+    color: var(--pine);
+    font-weight: 700;
+    font-family: 'rainyhearts', sans-serif;
+    font-size: calc(40% + 1vw);
+    word-spacing: 2px;
+
+  }
+
+  .title-container {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin: 0px;
+    width: 40%;
+    padding-bottom: 10%;
+    padding: 0px;
+    border-bottom: 0px solid #2f4f3a00;
+  }
 
   .about-container {
     height: 70vh;
@@ -395,6 +425,114 @@ nav {
 
 
 /* PROJECTS */
+.projects-layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  padding: 6rem;
+  gap: 4rem;
+  font-family: "VCR OSD Mono", monospace;
+  color: #2f4f3a;
+}
+
+/* LEFT COLUMN */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* EACH ROW */
+.project-row {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  cursor: pointer;
+}
+
+/* THE SQUARE */
+.project-box {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #2f4f3a;
+  transition: 
+    width 0.35s ease,
+    background-color 0.35s ease;
+}
+
+/* TEXT */
+.project-title {
+  letter-spacing: 0.14em;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* HOVER PREVIEW */
+.project-row:hover .project-box {
+  width: 64px;
+  background-color: #2f4f3a;
+}
+
+/* ACTIVE (LOCKED OPEN) */
+.project-row.active .project-box {
+  width: 110px;
+  background-color: #2f4f3a;
+}
+
+/* ACTIVE TEXT */
+.project-row.active .project-title {
+  opacity: 1;
+}
+
+/* RIGHT PANEL */
+.project-panel {
+  flex: 1;
+  padding: 3rem;
+  border-left: 1px solid #2f4f3a55;
+  animation: slideIn 0.4s ease forwards;
+}
+
+/* PANEL MOTION */
+@keyframes slideIn {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.project-panel h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.project-panel p {
+  max-width: 420px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.project-links {
+  margin-top: 2rem;
+}
+
+.project-links a {
+  margin-right: 1.6rem;
+  text-decoration: underline;
+  color: inherit;
+}
+
+
+
+
+
+
+
+
+
 .projects {
   width: 100%;
   height: 100%;
@@ -411,8 +549,9 @@ html, body, #root, canvas {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   top: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
@@ -434,4 +573,46 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .projects-layout {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 1.2rem;
+    gap: 2rem;
+  }
+
+  .projects-list {
+    gap: 1.2rem;
+  }
+
+  .project-row {
+    gap: 1rem;
+  }
+
+  .project-box {
+    width: 18px;
+    height: 18px;
+  }
+
+  .project-row.active .project-box {
+    width: 64px;
+  }
+
+  .project-panel {
+    border-left: none;
+    border-top: 1px solid #2f4f3a55;
+    padding: 1.5rem 0;
+    animation: none;
+  }
+
+  .project-panel p {
+    max-width: 100%;
+  }
+
+  .project-links a {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
 }

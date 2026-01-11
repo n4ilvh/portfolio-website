@@ -1,4 +1,5 @@
 import Image from "../media/selfie.jpg";
+import Border from "../media/border.png";
 import Barcode from "../media/barcode.webp";
 import LeftBlob from "../media/left-blob.png"
 import RightBlob from "../media/right-blob.png"
@@ -12,10 +13,12 @@ function About() {
       <div className="about-container">
         <div className="title-container">
           <div className="about-title">About Me</div>
-        <div className="about-underline">+-+-+-+-+</div>
         </div>
         <div className="about-info">
+          
           <div className="about-image-container">
+            <img src={Border} alt="description" className="img-border"/>
+            
             <img src={Image} alt="description" className="about-img"/>
           </div>
           <div className="about-text">
