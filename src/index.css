@@ -39,6 +39,10 @@ canvas {
   display: block;
 }
 
+ .max480{
+  display: none;
+ }
+
 .page-container {
   width: 100%;
   height: 100%;
@@ -515,26 +519,51 @@ body {
   display: none;
  }
 
- .skills-mobile{
-  display: none;
- }
-
  .max480{
   display: flex;
+  flex-direction: column;
+ }
+
+ .about {
  }
 
  .about-image-container{
-  background-color: red;
-  border: 10px solid black;
+  order: 1;
+  height: 100%;
+  width: 100vw;
+  aspect-ratio: none;
+  align-items: start;
+  justify-content: center;
+
+ }
+
+ .img-border{
+  width: 70%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center top; 
+ }
+ .about-img {
+  width: 70%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center top; 
  }
 
  .about-text {
-  background-color: blue;
-  width: 10%;
+  width: 100%;
+  height: max-content;
+  justify-content: center;
+  padding: 10%;
+  font-size: calc(30% + 1vw);
+ }
+
+ .about-info {
+  flex-direction: column;
  }
 
 }
-
+/* 
 @media (max-width: 768px) {}
 
 @media (max-width: 1024px) {}
@@ -642,10 +671,10 @@ body {
   .skills-desktop {
     display: none;
   }
-} */
+} 
 
-/* PROJECTS (mobile view) */
-/* @media (max-width: 768px) {
+
+@media (max-width: 768px) {
   .projects-layout {
     flex-direction: column;
     height: auto;
@@ -687,4 +716,4 @@ body {
     display: inline-block;
     margin-bottom: 0.5rem;
   }
-}
+} */

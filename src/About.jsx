@@ -18,7 +18,6 @@ function About() {
           
           <div className="about-image-container">
             <img src={Border} alt="description" className="img-border"/>
-            
             <img src={Image} alt="description" className="about-img"/>
           </div>
           <div className="about-text">
