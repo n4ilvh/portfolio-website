@@ -39,6 +39,23 @@ function About() {
               <div>&nbsp;&nbsp;software: [<span className="about-text-highlight">"Adobe Photoshop", "Adobe Premiere Pro", "Adobe After Effects"</span>]</div>
             </div>
 
+
+
+            {/* max 480px */}
+            <div className="max480">
+              interests: [
+              <span className="about-text-highlight">
+                "gaming", "music", "mechanical keyboards", "electric guitar", "basketball"
+              </span>
+              ]
+            
+              <div>skills: &#123;</div>
+              <div>&nbsp;&nbsp;languages: [<span className="about-text-highlight">"Java", "Python", "C", "HTML", "CSS"</span>],</div>
+              <div>&nbsp;&nbsp;frameworks: [<span className="about-text-highlight">"React", "Three.js"</span>],</div>
+              <div>&nbsp;&nbsp;tools: [<span className="about-text-highlight">"Git", "Vite" </span>],</div>
+              <div>&nbsp;&nbsp;software: [<span className="about-text-highlight">"Adobe Photoshop", "Adobe Premiere Pro", "Adobe After Effects"</span>]</div>
+            </div>
+
             <div className="skills-mobile">
               interests: [
               <span className="about-text-highlight"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;"gaming",</span>

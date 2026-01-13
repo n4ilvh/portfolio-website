@@ -4,7 +4,7 @@ const projects = [
   {
     id: 1,
     title: "Portfolio Site",
-    desc: "A multithreaded C simulation inspired by Phasmophobia. Designed to practice concurrency, shared memory, and entity stateHunters and ghosts operate independently using pthreads and mutexes. Final project for Systems Programming.",
+    desc: "A personal website built to showcase my projects and experiments. Designed with a minimal, responsive layout and custom interactions, and deployed with a custom domain.",
     links: {
       github: "https://github.com/n4ilvh/portfolio-website",
     },
@@ -12,7 +12,7 @@ const projects = [
   {
     id: 2,
     title: "unfollowed.exe",
-    desc: "A Google Chrome extension that reveals which Instagram users are not following you back.",
+    desc: "A Google Chrome extension that compares your Instagram followers and following lists to reveal which users don’t follow you back, all directly in the browser.",
     links: {
       github: "https://github.com/n4ilvh/unfollowed.exe",
       chrome: "https://chromewebstore.google.com/detail/unfollowedexe/kdkgfkbcjjfohpedofakfeldkoejinpp",
@@ -21,7 +21,7 @@ const projects = [
   {
     id: 3,
     title: "Phasmophobia Simulator",
-    desc: "A final project for one of my university courses.",
+    desc: "A multithreaded C simulation inspired by Phasmophobia, where hunters and a ghost move and act independently. Built to explore concurrency, shared memory, synchronization, and low-level systems programming concepts.",
     links: {
       github: "https://github.com/n4ilvh/phasmophobia-simulator",
     },
@@ -29,7 +29,7 @@ const projects = [
   {
     id: 4,
     title: "d4rk mode",
-    desc: "A Google Chrome extension that inverts website background colours to create a dark mode effect.",
+    desc: "A Chrome extension that applies a dark mode effect to websites by dynamically inverting and adjusting page colours, improving readability on sites without native built in themes.",
     links: {
       github: "https://github.com/n4ilvh/d4rk-mode",
     },
@@ -37,7 +37,7 @@ const projects = [
     {
     id: 5,
     title: "Opp Detector",
-    desc: "A hackathon project.",
+    desc: "A hackathon project that helps users identify potential threats by analyzing real-time data and user input, presented through a simple and accessible interface.",
     links: {
       devpost: "https://devpost.com/software/opp-detector",
     },
