@@ -364,6 +364,7 @@ nav {
   width: 100%;
   min-height: calc(100dvh - 4rem);
   overflow: visible;
+  display: flex;
 }
 
 .projects-container {
@@ -373,8 +374,6 @@ nav {
   /* min-height: calc(100dvh - 4rem); */
   justify-content: center;
   position: relative;
-  
-  
 }
 
 .projects-title {
@@ -387,16 +386,18 @@ nav {
   text-align: start;
   padding: clamp(1.25rem, 3vw, 3rem);
   padding-left: clamp(1.25rem, 6vw, 6rem);
-  justify-content: center;
+  justify-content: start;
 }
 
 .projects-layout {
   display: flex;
   width: 100%;
   padding: clamp(1.25rem, 6vw, 6rem);
+  padding-top: 1px;
   gap: clamp(1.25rem, 3vw, 4rem);
   font-family: "VCR OSD Mono", monospace;
   color: #2f4f3a;
+
 }
 
 /* LEFT COLUMN */
