@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useEffect } from "react";
+
 
 const projects = [
   {
@@ -8,6 +10,10 @@ const projects = [
     links: {
       github: "https://github.com/n4ilvh/portfolio-website",
     },
+    images: [
+      "../media/portfolio/1.png",
+      "../media/portfolio/2.png",
+    ],
   },
   {
     id: 2,
@@ -17,6 +23,11 @@ const projects = [
       github: "https://github.com/n4ilvh/unfollowed.exe",
       chrome: "https://chromewebstore.google.com/detail/unfollowedexe/kdkgfkbcjjfohpedofakfeldkoejinpp",
     },
+    images: [
+      "../media/unfollowed/1.png",
+      "../media/unfollowed/2.png",
+
+    ],
   },
   {
     id: 3,
@@ -25,33 +36,47 @@ const projects = [
     links: {
       github: "https://github.com/n4ilvh/phasmophobia-simulator",
     },
+    images: [
+      "../media/phas/1.png",
+      "../media/phas/2.png",
+    ],
   },
   {
     id: 4,
-    title: "d4rk mode",
-    desc: "A Chrome extension that applies a dark mode effect to websites by dynamically inverting and adjusting page colours, improving readability on sites without native built in themes.",
-    links: {
-      github: "https://github.com/n4ilvh/d4rk-mode",
-    },
-  },
-    {
-    id: 5,
     title: "Opp Detector",
     desc: "A hackathon project that helps users identify potential threats by analyzing real-time data and user input, presented through a simple and accessible interface.",
     links: {
       devpost: "https://devpost.com/software/opp-detector",
     },
+    images: [
+      "../media/opp/1.png",
+    ],
   },
 ];
 
 export default function Projects() {
   const [active, setActive] = useState(null);
+  const [currentImage, setCurrentImage] = useState(0);
 
   const toggle = (id) => {
     setActive(active === id ? null : id);
+    useEffect(() => {
+      setCurrentImage(0);
+    }, [active]);
   };
 
   const activeProject = projects.find(p => p.id === active);
+
+  const nextImage = () => {
+  const total = activeProject.images?.length || 0;
+  setCurrentImage((prev) => (prev + 1) % total);
+};
+
+const prevImage = () => {
+  const total = activeProject.images?.length || 0;
+  setCurrentImage((prev) => (prev - 1 + total) % total);
+};
+  
 
   return (
     <div className="projects">
@@ -109,20 +134,23 @@ export default function Projects() {
             </div>
             
             <div className="project-images">
-              <img src="../media/portfolioscreenshots/1.png"></img>
+              {activeProject.images && (
+                <>
+                  <button onClick={prevImage} className="nav-btn left">←</button>
 
+                  <img
+                    src={activeProject.images[currentImage]}
+                    className="main-image"
+                  />
+
+                  <button onClick={nextImage} className="nav-btn right">→</button>
+                </>
+              )}
             </div>
           </aside>
         )}
       </section>
-
-
       </div>
-      
-    
-    
-    
     </div>
-
   );
 }
