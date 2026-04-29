@@ -55,60 +55,70 @@ export default function Projects() {
 
   return (
     <div className="projects">
-      <div className="projects-title">Projects</div>
+      <div className="projects-container">
+        <div className="projects-title">Projects</div>
         <section className="projects-layout">
-      {/* LEFT LIST */}
-      <div className="projects-list">
-        {projects.map((p) => (
-          <div
-            key={p.id}
-            className={`project-row ${active === p.id ? "active" : ""}`}
-            onClick={() => toggle(p.id)}
-          >
-            <div className="project-box" />
-            <span className="project-title">{p.title}</span>
-          </div>
-        ))}
+        {/* LEFT LIST */}
+        <div className="projects-list">
+          {projects.map((p) => (
+            <div
+              key={p.id}
+              className={`project-row ${active === p.id ? "active" : ""}`}
+              onClick={() => toggle(p.id)}
+            >
+              <div className="project-box" />
+              <span className="project-title">{p.title}</span>
+            </div>
+          ))}
+        </div>
+
+  {/* RIGHT PANEL */}
+        {activeProject && (
+          <aside className="project-panel">
+            <div className="project-panel-text">
+              <h2>{activeProject.title}</h2>
+              <p>{activeProject.desc}</p>
+
+              <div className="project-links">
+                {activeProject.links.chrome && (
+                  <a href={activeProject.links.chrome} target="_blank">
+                    Chrome Web Store
+                  </a>
+                )}
+                
+                {activeProject.links.github && (
+                  <a
+                    href={activeProject.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                )}
+
+                {activeProject.links.devpost && (
+                  <a
+                    href={activeProject.links.devpost}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Devpost
+                  </a>
+                )}
+              </div>
+            </div>
+            
+            <div className="project-images">
+              <img src="../media/portfolioscreenshots/1.png"></img>
+
+            </div>
+          </aside>
+        )}
+      </section>
+
+
       </div>
-
-{/* RIGHT PANEL */}
-      {activeProject && (
-        <aside className="project-panel">
-          <h2>{activeProject.title}</h2>
-          <p>{activeProject.desc}</p>
-
-          <div className="project-links">
-            {activeProject.links.chrome && (
-              <a href={activeProject.links.chrome} target="_blank">
-                Chrome Web Store
-              </a>
-            )}
-            
-            {activeProject.links.github && (
-              <a
-                href={activeProject.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-            )}
-
-            {activeProject.links.devpost && (
-              <a
-                href={activeProject.links.devpost}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Devpost
-              </a>
-            )}
-
-            
-          </div>
-        </aside>
-      )}
-    </section>
+      
     
     
     
