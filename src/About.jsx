@@ -1,9 +1,7 @@
 import Image from "../media/selfie.jpg";
 import Border from "../media/border.png";
-import Barcode from "../media/barcode.webp";
 import LeftBlob from "../media/left-blob.png"
 import RightBlob from "../media/right-blob.png"
-import { color } from "three/tsl";
 function About() {
   return (
     <div className="about"> 
