@@ -1,5 +1,13 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import img1 from "../media/portfolioscreenshots/1.png";
+import img2 from "../media/portfolioscreenshots/2.png";
+import img3 from "../media/unfollowed/1.png";
+import img4 from "../media/unfollowed/2.png";
+import img5 from "../media/phas/1.png";
+import img6 from "../media/phas/2.png";
+import img7 from "../media/opp/1.jpg";
+
 
 
 const projects = [
