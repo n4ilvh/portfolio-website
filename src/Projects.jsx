@@ -49,7 +49,7 @@ const projects = [
       devpost: "https://devpost.com/software/opp-detector",
     },
     images: [
-      "../media/opp/1.png",
+      "../media/opp/1.jpg",
     ],
   },
 ];
