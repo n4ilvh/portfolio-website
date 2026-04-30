@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import img1 from "../media/portfolioscreenshots/1.png";
-import img2 from "../media/portfolioscreenshots/2.png";
-import img3 from "../media/unfollowed/1.png";
-import img4 from "../media/unfollowed/2.png";
-import img5 from "../media/phas/1.png";
-import img6 from "../media/phas/2.png";
-import img7 from "../media/opp/1.jpg";
+
 
 
 
@@ -19,8 +13,8 @@ const projects = [
       github: "https://github.com/n4ilvh/portfolio-website",
     },
     images: [
-      "../media/portfolio/1.png",
-      "../media/portfolio/2.png",
+      "/screenshots/portfolio/1.png",
+      "/screenshots/portfolio/2.png",
     ],
   },
   {
@@ -32,8 +26,8 @@ const projects = [
       chrome: "https://chromewebstore.google.com/detail/unfollowedexe/kdkgfkbcjjfohpedofakfeldkoejinpp",
     },
     images: [
-      "../media/unfollowed/1.png",
-      "../media/unfollowed/2.png",
+      "../screenshots/unfollowed/1.png",
+      "../screenshots/unfollowed/2.png",
 
     ],
   },
@@ -45,8 +39,8 @@ const projects = [
       github: "https://github.com/n4ilvh/phasmophobia-simulator",
     },
     images: [
-      "../media/phas/1.png",
-      "../media/phas/2.png",
+      "../screenshots/phas/1.png",
+      "../screenshots/phas/2.png",
     ],
   },
   {
@@ -57,7 +51,7 @@ const projects = [
       devpost: "https://devpost.com/software/opp-detector",
     },
     images: [
-      "../media/opp/1.jpg",
+      "../screenshots/opp/1.jpg",
     ],
   },
 ];
