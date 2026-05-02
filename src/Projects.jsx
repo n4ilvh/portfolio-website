@@ -73,6 +73,7 @@ export default function Projects() {
     } else {
       setIsClosing(false);
       setActive(id);
+      setCurrentImage(0);
     }
   };
 
