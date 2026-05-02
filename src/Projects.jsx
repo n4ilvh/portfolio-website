@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
-
-
-
 const projects = [
   {
     id: 1,
@@ -59,15 +56,32 @@ const projects = [
 export default function Projects() {
   const [active, setActive] = useState(null);
   const [currentImage, setCurrentImage] = useState(0);
+  const [isClosing, setIsClosing] = useState(false);
+  const [lastProject, setLastProject] = useState(null);
+
 
   const toggle = (id) => {
-    setActive(active === id ? null : id);
-    useEffect(() => {
-      setCurrentImage(0);
-    }, [active]);
+    if (active === id) {
+      // start exit animation
+      setIsClosing(true);
+
+      setTimeout(() => {
+        setActive(null);
+        setIsClosing(false);
+      }, 300); // match CSS duration
+    } else {
+      setActive(id);
+    }
   };
 
+  useEffect(() => {
+    if (active !== null) {
+      setLastProject(projects.find(p => p.id === active));
+    }
+  }, [active]);
+
   const activeProject = projects.find(p => p.id === active);
+  const displayProject = activeProject || lastProject;
 
   const nextImage = () => {
   const total = activeProject.images?.length || 0;
@@ -100,22 +114,22 @@ const prevImage = () => {
         </div>
 
   {/* RIGHT PANEL */}
-        {activeProject && (
-          <aside className="project-panel">
+        {(activeProject || isClosing) && (
+          <aside className={`project-panel ${isClosing ? "closing" : "open"}`}>
             <div className="project-panel-text">
-              <h2>{activeProject.title}</h2>
-              <p>{activeProject.desc}</p>
+              <h2>{displayProject.title}</h2>
+              <p>{displayProject.desc}</p>
 
               <div className="project-links">
-                {activeProject.links.chrome && (
-                  <a href={activeProject.links.chrome} target="_blank">
+                {displayProject.links.chrome && (
+                  <a href={displayProject.links.chrome} target="_blank">
                     Chrome Web Store
                   </a>
                 )}
                 
-                {activeProject.links.github && (
+                {displayProject.links.github && (
                   <a
-                    href={activeProject.links.github}
+                    href={displayProject.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -123,9 +137,9 @@ const prevImage = () => {
                   </a>
                 )}
 
-                {activeProject.links.devpost && (
+                {displayProject.links.devpost && (
                   <a
-                    href={activeProject.links.devpost}
+                    href={displayProject.links.devpost}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -136,12 +150,12 @@ const prevImage = () => {
             </div>
             
             <div className="project-images">
-              {activeProject.images && (
+              {displayProject.images && (
                 <>
                   <button onClick={prevImage} className="nav-btn left">←</button>
 
                   <img
-                    src={activeProject.images[currentImage]}
+                    src={displayProject.images[currentImage]}
                     className="main-image"
                   />
 
