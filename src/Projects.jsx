@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const projects = [
   {
@@ -58,6 +57,8 @@ export default function Projects() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
   const [lastProject, setLastProject] = useState(null);
+  const [panelEntered, setPanelEntered] = useState(false);
+  const prevActiveRef = useRef(null);
 
 
   const toggle = (id) => {
@@ -70,6 +71,7 @@ export default function Projects() {
         setIsClosing(false);
       }, 300); // match CSS duration
     } else {
+      setIsClosing(false);
       setActive(id);
     }
   };
@@ -80,16 +82,44 @@ export default function Projects() {
     }
   }, [active]);
 
+  useEffect(() => {
+    if (active === null && !isClosing) {
+      setPanelEntered(false);
+      prevActiveRef.current = null;
+      return;
+    }
+    if (isClosing) return;
+
+    const openingFromClosed = prevActiveRef.current === null;
+    prevActiveRef.current = active;
+
+    if (openingFromClosed) {
+      setPanelEntered(false);
+      let cancelled = false;
+      const rid1 = requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (!cancelled) setPanelEntered(true);
+        });
+      });
+      return () => {
+        cancelled = true;
+        cancelAnimationFrame(rid1);
+      };
+    }
+
+    setPanelEntered(true);
+  }, [active, isClosing]);
+
   const activeProject = projects.find(p => p.id === active);
   const displayProject = activeProject || lastProject;
 
   const nextImage = () => {
-  const total = activeProject.images?.length || 0;
+  const total = displayProject.images?.length || 0;
   setCurrentImage((prev) => (prev + 1) % total);
 };
 
 const prevImage = () => {
-  const total = activeProject.images?.length || 0;
+  const total = displayProject.images?.length || 0;
   setCurrentImage((prev) => (prev - 1 + total) % total);
 };
   
@@ -114,8 +144,10 @@ const prevImage = () => {
         </div>
 
   {/* RIGHT PANEL */}
-        {(activeProject || isClosing) && (
-          <aside className={`project-panel ${isClosing ? "closing" : "open"}`}>
+        {(displayProject && (active !== null || isClosing)) && (
+          <aside
+            className={`project-panel ${isClosing ? "exit" : panelEntered ? "open" : ""}`}
+          >
             <div className="project-panel-text">
               <h2>{displayProject.title}</h2>
               <p>{displayProject.desc}</p>
