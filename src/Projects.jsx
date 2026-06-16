@@ -70,7 +70,19 @@ export default function Projects() {
         setActive(null);
         setIsClosing(false);
       }, 300); // match CSS duration
-    } else {
+    } 
+    
+    else if (active !== null) {
+      setIsClosing(true); // Trigger the current panel's exit animation
+
+      setTimeout(() => {
+        setIsClosing(false);
+        setActive(id);        // Mount the new project data
+        setCurrentImage(0);   // Reset carousel index
+      }, 300); // Wait exactly long enough for the exit animation to finish
+    }
+    
+    else {
       setIsClosing(false);
       setActive(id);
       setCurrentImage(0);
