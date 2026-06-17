@@ -37,11 +37,16 @@
 
 canvas {
   display: block;
+  width: 10px;
 }
 
 .max480{
 display: none;
 }
+
+
+
+
 
 .page-container {
   width: 100%;
@@ -77,9 +82,7 @@ display: none;
   font-weight: 100;
   color: #527e59;
   font-family: 'VCR';
-  font-weight: 100;
-  line-height: 1.4;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.1em;
   align-items: center;
 }
 
@@ -116,6 +119,7 @@ nav {
   align-items: center;
   justify-content: center;
   transition: color 0.5s ease;
+  
 }
 
 .nav-item:hover {
@@ -581,16 +585,13 @@ nav {
 }
 
 .dither-container {
-  width: 100%;
-  height: 100%;
   position: relative;
 }
 
 html, body, #root, canvas {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+
   top: 0;
   overflow-x: hidden;
   overflow-y: auto;
