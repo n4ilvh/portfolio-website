@@ -586,6 +586,11 @@ nav {
 
 .dither-container {
   position: relative;
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
 }
 
 html, body, #root, canvas {
