@@ -45,6 +45,10 @@ display: none;
 }
 
 
+.home {
+  position: relative;
+  height: 100vh;
+}
 
 
 
@@ -104,7 +108,7 @@ nav {
 .nav-item-container {
   display: flex;
   flex-direction: row;
-  gap: 9px;
+  gap: 19px;
   align-items: center;
   justify-content: center;
 }
@@ -119,7 +123,6 @@ nav {
   align-items: center;
   justify-content: center;
   transition: color 0.5s ease;
-  
 }
 
 .nav-item:hover {
@@ -611,6 +614,7 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   color: #e0e0e0;
 }
+
 
 @media (max-width: 900px), (max-aspect-ratio: 3/4) {
 

@@ -9,53 +9,58 @@ function App() {
     <Router>
       {/* Navigation and routes live *inside* Router directly */}
       <div className="app">
-        {/* Background */}
-        <div className="background">
-          <Dither
-            waveColor={[0.8, 0.722, 0.616]}
-            disableAnimation={false}
-            enableMouseInteraction={true}
-            mouseRadius={0.3}
-            colorNum={9}
-            waveAmplitude={0.5}
-            waveFrequency={1.5}
-            waveSpeed={0.09}
-          />
-        </div>
-
-        {/* Foreground / Content */}
-        <div className="content">
-          <nav>
-            <div className="nav-item-container">
-              <div className="nav-item"><Link to="/">Home</Link></div>
-              <div className="nav-item"><Link to="/projects">Projects</Link></div>
-            </div>
-          </nav>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <div className="page-container">
-                    <div className="header">
-                      <div>Nailah Abel</div>
-                      <p>Computer Science Student</p>
-                    </div>
-                    <div className="contact-container">
-                        <div className="contact-links">
-                            <a href="https://github.com/n4ilvh" target="_blank" rel="noopener noreferrer">github</a>
-                            <a href="https://www.linkedin.com/in/nailah-abel/" target="_blank" rel="noopener noreferrer">linkedin</a>
-                            <a href="mailto:nailah.abel@gmail.com" target="_blank" rel="noopener noreferrer">email</a>
-                            <a href="https://nailahabel.dev/resume.pdf" target="_blank">resume</a>
-                            <a href="https://monkeytype.com/profile/n4ilvh" target="_blank" rel="noopener noreferrer">monkeytype</a>
-                        </div>
-                    </div> 
-                </div>
-              }
+        {/* NAVIGATION BAR */}
+        <nav>
+          <div className="nav-item-container">
+            <div className="nav-item"><a href="#home">HOME</a></div>
+            <div className="nav-item"><a href="#projects">PROJECTS</a></div>
+            <div className="nav-item"><a href="#experience">EXPERIENCE</a></div>
+            <div className="nav-item"><a href="#skills">SKILLS</a></div>
+            <div className="nav-item"><a href="#contact">CONTACT</a></div>
+          </div>
+        </nav>
+        {/* HOME PAGE */}
+        <section className="home" id="home">
+          <div className="background">
+            <Dither
+              waveColor={[0.8, 0.722, 0.616]}
+              disableAnimation={false}
+              enableMouseInteraction={false}
+              mouseRadius={0.3}
+              colorNum={9}
+              waveAmplitude={0.5}
+              waveFrequency={1.5}
+              waveSpeed={0.09}
             />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-          </Routes>
-        </div>
+          </div>
+          <div className="content">
+            <div className="page-container">
+                <div className="header">
+                  <div>Nailah Abel</div>
+                  <p>Computer Science Student</p>
+                </div>
+                <div className="contact-container">
+                  <div className="contact-links">
+                      <a href="https://github.com/n4ilvh" target="_blank" rel="noopener noreferrer">github</a>
+                      <a href="https://www.linkedin.com/in/nailah-abel/" target="_blank" rel="noopener noreferrer">linkedin</a>
+                      <a href="mailto:nailah.abel@gmail.com" target="_blank" rel="noopener noreferrer">email</a>
+                      <a href="https://nailahabel.dev/resume.pdf" target="_blank">resume</a>
+                      <a href="https://monkeytype.com/profile/n4ilvh" target="_blank" rel="noopener noreferrer">monkeytype</a>
+                      view projects
+                      resume
+                  </div>
+                </div> 
+            </div>
+          </div>
+        </section>
+
+        
+        {/* PROJECTS PAGE */}
+        <section id="projects">
+          <div className="content2">
+          </div>
+              
+        </section>
       </div> 
     </Router>
   );
