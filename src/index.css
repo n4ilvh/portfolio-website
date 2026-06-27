@@ -175,11 +175,11 @@ nav {
 .contact-links {
   display: flex;
   width: 100%;
-  gap: 1.5rem;
+  gap: 2.5rem;
   font-size: calc(0.95rem + 0.5vw);
-  flex-direction: column;
   align-items: center;
-  padding-top: 5vh;
+  justify-content: center;
+  padding: 5vh;
 }
 
 .contact-links a {
@@ -614,7 +614,46 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   color: #e0e0e0;
 }
+.pixel-window {
+  background: #8da385; /* Match your light green/tan pane */
+  border-radius: 0;
+  box-shadow: 2px 2px 0px #111413; /* Blocky retro drop-shadow */
+  padding: 16px;
+  max-width: 500px;
+}
 
+/* The window header row */
+.pixel-window-header {
+  background: var(--pine); /* Dark terminal accent bar */
+  color: #7da087; /* Text color matching your site title */
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: monospace;
+  margin: -16px -16px 16px -16px; /* Flush layout inside container */
+  border: 2px solid #223029;
+}
+
+
+/* Minimize/Maximize window controls layout */
+.window-controls {
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-blocks {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  align-items: end;
+  display: flex;
+  justify-content: center;
+}
 
 @media (max-width: 900px), (max-aspect-ratio: 3/4) {
 
