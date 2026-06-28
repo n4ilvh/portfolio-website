@@ -36,9 +36,9 @@ function App() {
               waveSpeed={0.09}
             />
           </div>
+          <div className="background-blocks"></div>
           
           <div className="content">
-            <div className="page-container">
               
                 <div className="header">
                   <div>Nailah Abel</div>
@@ -50,42 +50,23 @@ function App() {
                       <a href="https://www.linkedin.com/in/nailah-abel/" target="_blank" rel="noopener noreferrer">linkedin</a>
                       <a href="mailto:nailah.abel@gmail.com" target="_blank" rel="noopener noreferrer">email</a>
                       <a href="https://monkeytype.com/profile/n4ilvh" target="_blank" rel="noopener noreferrer">monkeytype</a> */}
-                      <a href="https://nailahabel.dev/resume.pdf" target="_blank">resume</a>
+                      <a href="/NailahAbelResume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
                       <a href="#projects">view projects</a>
                       
                   </div>
                 </div> 
-            <div className="background-blocks">
-            <img src="../media/blocks.png"></img> 
-          </div>
+            
 
-                <div class="pixel-window">
-                  <div class="pixel-window-header">
-                      <span>hobbies.exe</span>
-                      <div class="window-controls">
-                        <VscChromeMinimize />
-                        <VscChromeRestore /> 
-                        <VscChromeClose />
-                      </div>
-                  </div>
-                  <div>
-                    <p></p>coding
-                    <p></p>music
-                    <p></p>basketball
-                    <p></p>video games
-                  </div>
-                </div>
+                
                 
             </div>
-          </div>
         </section>
 
         
         {/* PROJECTS PAGE */}
         <section id="projects">
           <div className="content2">
-                        
-
+            <Projects></Projects>
           </div>
         </section>
       </div> 

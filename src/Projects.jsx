@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { VscChromeRestore, VscChromeMinimize, VscChromeClose } from "react-icons/vsc";
 
 const projects = [
   {
@@ -139,22 +140,37 @@ const prevImage = () => {
 
   return (
     <div className="projects">
+      
       <div className="projects-container">
+        
         <div className="projects-title">Projects</div>
         <section className="projects-layout">
         {/* LEFT LIST */}
-        <div className="projects-list">
-          {projects.map((p) => (
-            <div
-              key={p.id}
-              className={`project-row ${active === p.id ? "active" : ""}`}
-              onClick={() => toggle(p.id)}
-            >
-              <div className="project-box" />
-              <span className="project-title">{p.title}</span>
+        <div class="pixel-window">
+          <div class="pixel-window-header">
+              <span>project_list.exe</span>
+              <div class="window-controls">
+                <VscChromeMinimize />
+                <VscChromeRestore /> 
+                <VscChromeClose />
+              </div>
+          </div>
+          <div className="pixel-window-content">
+            <div className="projects-list">
+              {projects.map((p) => (
+                <div
+                  key={p.id}
+                  className={`project-row ${active === p.id ? "active" : ""}`}
+                  onClick={() => toggle(p.id)}
+                >
+                  <span className="project-title">{p.title}</span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+          
+      </div>
+       
 
   {/* RIGHT PANEL */}
         {(displayProject && (active !== null || isClosing)) && (
