@@ -142,7 +142,6 @@ const prevImage = () => {
     <div className="projects">
       
       <div className="projects-container">
-        
         <div className="projects-title">Projects</div>
         <section className="projects-layout">
         {/* LEFT LIST */}

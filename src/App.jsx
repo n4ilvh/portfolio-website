@@ -16,9 +16,9 @@ function App() {
           <div className="nav-item-container">
             <div className="nav-item"><a href="#home">HOME</a></div>
             <div className="nav-item"><a href="#projects">PROJECTS</a></div>
-            <div className="nav-item"><a href="#experience">EXPERIENCE</a></div>
+            {/* <div className="nav-item"><a href="#experience">EXPERIENCE</a></div>
             <div className="nav-item"><a href="#skills">SKILLS</a></div>
-            <div className="nav-item"><a href="#contact">CONTACT</a></div>
+            <div className="nav-item"><a href="#contact">CONTACT</a></div> */}
             
           </div>
         </nav>
