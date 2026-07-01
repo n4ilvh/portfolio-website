@@ -36,8 +36,6 @@ function About() {
               <div>&nbsp;&nbsp;software: [<span className="about-text-highlight">"Adobe Photoshop", "Adobe Premiere Pro", "Adobe After Effects"</span>]</div>
             </div>
 
-
-
             {/* max 480px */}
             <div className="max480">
               interests: [
