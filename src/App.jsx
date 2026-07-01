@@ -1,5 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { VscChromeRestore, VscChromeMinimize, VscChromeClose } from "react-icons/vsc";
+import { FaLinkedin } from "react-icons/fa";
+import { SiMonkeytype, SiGithub} from "react-icons/si";
+import { MdEmail } from "react-icons/md";
+
+
 
 import Dither from "./Dither";
 import "./App.css";
@@ -37,27 +42,23 @@ function App() {
             />
           </div>
           <div className="background-blocks"></div>
-          
           <div className="content">
-              
                 <div className="header">
                   <div>Nailah Abel</div>
                   <p>Computer Science Student</p>
                 </div>
                 <div className="contact-container">
                   <div className="contact-links">
-                      {/* <a href="https://github.com/n4ilvh" target="_blank" rel="noopener noreferrer">github</a>
-                      <a href="https://www.linkedin.com/in/nailah-abel/" target="_blank" rel="noopener noreferrer">linkedin</a>
-                      <a href="mailto:nailah.abel@gmail.com" target="_blank" rel="noopener noreferrer">email</a>
-                      <a href="https://monkeytype.com/profile/n4ilvh" target="_blank" rel="noopener noreferrer">monkeytype</a> */}
                       <a href="/NailahAbelResume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
-                      <a href="#projects">view projects</a>
-                      
+                      <a href="#projects">view projects</a>  
                   </div>
                 </div> 
-            
-
-                
+                {/* <div className="socials">
+                  <a href="https://github.com/n4ilvh" target="_blank" rel="noopener noreferrer"><SiGithub /></a>
+                  <a href="https://www.linkedin.com/in/nailah-abel/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+                  <a href="mailto:nailah.abel@gmail.com" target="_blank" rel="noopener noreferrer"><MdEmail /></a>
+                  <a href="https://monkeytype.com/profile/n4ilvh" target="_blank" rel="noopener noreferrer"><SiMonkeytype /></a>
+                </div> */}
                 
             </div>
         </section>

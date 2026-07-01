@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { VscChromeRestore, VscChromeMinimize, VscChromeClose } from "react-icons/vsc";
+import { MdOutlineArrowOutward } from "react-icons/md";
+
 
 const projects = [
   {
@@ -178,7 +180,7 @@ const prevImage = () => {
 
             <div class="pixel-window2">
           <div class="pixel-window-header">
-              <span><span>{displayProject.title}</span>_details.exe</span>
+              <span>project_details.exe</span>
               <div class="window-controls">
                 <VscChromeMinimize />
                 <VscChromeRestore /> 
@@ -193,6 +195,7 @@ const prevImage = () => {
               <div className="project-links">
                 {displayProject.links.chrome && (
                   <a href={displayProject.links.chrome} target="_blank">
+                    <MdOutlineArrowOutward />
                     Chrome Web Store
                   </a>
                 )}
@@ -203,6 +206,7 @@ const prevImage = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
+                    <MdOutlineArrowOutward />
                     GitHub
                   </a>
                 )}
