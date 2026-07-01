@@ -354,6 +354,7 @@ nav {
   min-height: calc(100dvh - 4rem);
   overflow: visible;
   display: flex;
+  padding-top: 4em;
 }
 
 .projects-container {
@@ -367,26 +368,27 @@ nav {
 
 .projects-title {
   display: flex;
-  width: fit-content;
+  width: 100%;
   font-size: clamp(2.8rem, 11vw, 7.5rem);
   font-family: 'KiwiSoda', sans-serif;
-  line-height: 80%;
+  line-height: 50%;
   color: #cfbca5;
   text-align: start;
-  padding: clamp(1.25rem, 3vw, 3rem);
-  padding-left: clamp(1.25rem, 6vw, 6rem);
-  justify-content: start;
-}
+  padding: clamp(1rem, 3vw, 3rem);
+  justify-content: center;
 
+}
 
 
 .projects-layout {
   display: flex;
   width: 100%;
-  height: 50%;
-  padding-left: clamp(1.25rem, 6vw, 6rem);
+  height: 80%;
+  padding-left: clamp(1.25rem, 3vw, 6rem);
+  padding-top: 50px;
   font-family: "VCR OSD Mono", monospace;
   color: #2f4f3a;
+  gap: 40px;
 }
 
 /* LEFT COLUMN */
@@ -413,7 +415,14 @@ nav {
 
 .project-title:hover::after {
   content: '_';
-  
+  display: inline-block;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 
@@ -425,9 +434,8 @@ nav {
   margin-left: 2rem;
   position: relative;
   display: flex;
-  width: 100%;
   z-index: 1;
-
+  white-space: nowrap;
 }
 
 
@@ -483,7 +491,7 @@ nav {
   height: 100%;
   justify-content: center;
   padding-left: 3rem;
-
+  
 }
 
 /* PANEL MOTION */
@@ -602,7 +610,18 @@ body {
   background: #8da385; /* Match your light green/tan pane */
   border-radius: 0;
   padding: 16px;
-  max-width: 800px;
+  width: 30%;
+  border: 2px  solid #274436;
+  display: flex;
+  flex-direction: column;
+}
+
+.pixel-window2 {
+  background: #8da385; /* Match your light green/tan pane */
+  border-radius: 0;
+  padding: 16px;
+  height: 100%;
+  width: 100%;
   border: 2px  solid #274436;
   display: flex;
   flex-direction: column;

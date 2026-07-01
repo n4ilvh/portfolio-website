@@ -140,7 +140,6 @@ const prevImage = () => {
 
   return (
     <div className="projects">
-      
       <div className="projects-container">
         <div className="projects-title">Projects</div>
         <section className="projects-layout">
@@ -176,6 +175,17 @@ const prevImage = () => {
           <aside
             className={`project-panel ${isClosing ? "exit" : panelEntered ? "open" : ""}`}
           >
+
+            <div class="pixel-window2">
+          <div class="pixel-window-header">
+              <span><span>{displayProject.title}</span>_details.exe</span>
+              <div class="window-controls">
+                <VscChromeMinimize />
+                <VscChromeRestore /> 
+                <VscChromeClose />
+              </div>
+          </div>
+          <div className="pixel-window-content">
             <div className="project-panel-text">
               <h2>{displayProject.title}</h2>
               <p>{displayProject.desc}</p>
@@ -223,6 +233,13 @@ const prevImage = () => {
                 </>
               )}
             </div>
+
+
+
+
+          </div>
+      </div>
+            
           </aside>
         )}
       </section>
