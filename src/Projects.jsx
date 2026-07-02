@@ -7,6 +7,7 @@ const projects = [
   {
     id: 1,
     title: "Portfolio Site",
+    date: "07-2026",
     desc: "A personal website built to showcase my projects and experiments. Designed with a minimal, responsive layout and custom interactions, and deployed with a custom domain.",
     links: {
       github: "https://github.com/n4ilvh/portfolio-website",
@@ -19,7 +20,8 @@ const projects = [
   {
     id: 2,
     title: "unfollowed.exe",
-    desc: "A Google Chrome extension that compares your Instagram followers and following lists to reveal which users don’t follow you back, all directly in the browser.",
+    date: "12-2025",
+    desc: "A Google Chrome extension that reveals which users don’t follow you back on Instagram. It compares followers and following all directly in the browser.",
     links: {
       github: "https://github.com/n4ilvh/unfollowed.exe",
       chrome: "https://chromewebstore.google.com/detail/unfollowedexe/kdkgfkbcjjfohpedofakfeldkoejinpp",
@@ -33,6 +35,7 @@ const projects = [
   {
     id: 3,
     title: "Phasmophobia Simulator",
+    date: "12-2025",
     desc: "A multithreaded C simulation inspired by Phasmophobia, where hunters and a ghost move and act independently. Built to explore concurrency, shared memory, synchronization, and low-level systems programming concepts.",
     links: {
       github: "https://github.com/n4ilvh/phasmophobia-simulator",
@@ -45,6 +48,7 @@ const projects = [
   {
     id: 4,
     title: "Opp Detector",
+    date: "03-2025",
     desc: "A hackathon project that helps users identify potential threats by analyzing real-time data and user input, presented through a simple and accessible interface.",
     links: {
       devpost: "https://devpost.com/software/opp-detector",
@@ -144,12 +148,13 @@ const prevImage = () => {
     <div className="projects">
       <div className="projects-container">
         <div className="projects-title">Projects</div>
+        
         <section className="projects-layout">
         {/* LEFT LIST */}
-        <div class="pixel-window">
-          <div class="pixel-window-header">
+        <div className="pixel-window">
+          <div className="pixel-window-header">
               <span>project_list.exe</span>
-              <div class="window-controls">
+              <div className="window-controls">
                 <VscChromeMinimize />
                 <VscChromeRestore /> 
                 <VscChromeClose />
@@ -177,26 +182,28 @@ const prevImage = () => {
           <aside
             className={`project-panel ${isClosing ? "exit" : panelEntered ? "open" : ""}`}
           >
-
-            <div class="pixel-window2">
-          <div class="pixel-window-header">
-              <span>project_details.exe</span>
-              <div class="window-controls">
-                <VscChromeMinimize />
-                <VscChromeRestore /> 
-                <VscChromeClose />
+            <div className="pixel-window2">
+              <div className="pixel-window-header">
+                  <span>project_details.exe</span>
+                  <div className="window-controls">
+                    <VscChromeMinimize />
+                    <VscChromeRestore /> 
+                    <VscChromeClose />
+                  </div>
               </div>
-          </div>
-          <div className="pixel-window-content">
+          <div className="pixel-window-content" style={{height: '100%'}}>
             <div className="project-panel-text">
               <h2>{displayProject.title}</h2>
+              <p>{displayProject.date}</p>
               <p>{displayProject.desc}</p>
 
               <div className="project-links">
                 {displayProject.links.chrome && (
-                  <a href={displayProject.links.chrome} target="_blank">
-                    <MdOutlineArrowOutward />
-                    Chrome Web Store
+                  <a href={displayProject.links.chrome} target="_blank">  
+                    <div style={{display: "flex", alignItems: "center"}}>
+                      <MdOutlineArrowOutward />
+                      Chrome Web Store
+                    </div>
                   </a>
                 )}
                 
@@ -206,8 +213,11 @@ const prevImage = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <MdOutlineArrowOutward />
-                    GitHub
+                    <div style={{display: "flex", alignItems: "center"}}>
+                      <MdOutlineArrowOutward />
+                      GitHub
+                    </div>
+                    
                   </a>
                 )}
 
@@ -217,12 +227,14 @@ const prevImage = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Devpost
+                    <div style={{display: "flex", alignItems: "center"}}>
+                      <MdOutlineArrowOutward />
+                      Devpost
+                    </div>
                   </a>
                 )}
               </div>
             </div>
-            
             <div className="project-images">
               {displayProject.images && (
                 <>
@@ -232,15 +244,10 @@ const prevImage = () => {
                     src={displayProject.images[currentImage]}
                     className="main-image"
                   />
-
                   <button onClick={nextImage} className="nav-btn right">→</button>
                 </>
               )}
             </div>
-
-
-
-
           </div>
       </div>
             
