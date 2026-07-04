@@ -29,15 +29,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  user-select: none;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-canvas {
-  display: block;
-  width: 10px;
+  
 }
 
 .max480{
@@ -48,8 +40,7 @@ display: none;
 .home {
   position: relative;
   height: 100vh;
-  min-height: 500px;
-
+  min-height: auto;
 }
 
 .header {
@@ -67,7 +58,6 @@ display: none;
   text-align: center;
   color: #527e59;
   font-family: 'KiwiSoda', sans-serif;
-  user-select: none;
 }
 
 .header p {
@@ -169,7 +159,7 @@ nav {
     
 }
 
-.contact-links {
+.action-links {
   display: flex;
   width: 100%;
   gap: 2.5rem;
@@ -177,10 +167,13 @@ nav {
   align-items: center;
   justify-content: center;
   padding: 2vh;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   
 }
 
-.contact-links a {
+.action-links a {
   position: relative;
   color: #5f6760;
   text-decoration: none;
@@ -189,13 +182,13 @@ nav {
 }
 
 /* default brackets */
-.contact-links a::before {
+.action-links a::before {
   content: "[   ";
   margin-right: 0.1ch;
   transition: content 0.3s ease;
 }
 
-.contact-links a::after {
+.action-links a::after {
   content: "   ]";
   margin-left: 0.1ch;
   transition: content 0.3s ease;
@@ -203,17 +196,17 @@ nav {
 }
 
 /* hover brackets change */
-.contact-links a:hover::before {
+.action-links a:hover::before {
   content: '["';
   
 }
 
-.contact-links a:hover::after {
+.action-links a:hover::after {
   content: '"]';
 }
 
 /* optional: color change on hover */
-.contact-links a:hover {
+.action-links a:hover {
   color: var(--pine);
 }
 
@@ -358,7 +351,8 @@ nav {
 /* PROJECTS */
 .projects {
   width: 100%;
-  min-height: calc(100dvh - 4rem);
+  height: 100vh;
+  min-height: auto;
   overflow: visible;
   display: flex;
   padding-top: 4em;
@@ -369,7 +363,6 @@ nav {
   flex-direction: column;
   width: 100%;
   /* min-height: calc(100dvh - 4rem); */
-  justify-content: center;
   position: relative;
 }
 
@@ -383,7 +376,6 @@ nav {
   text-align: start;
   padding: clamp(1rem, 3vw, 3rem);
   justify-content: center;
-
 }
 
 
@@ -469,12 +461,13 @@ nav {
   flex: 1;
   padding-right: 3rem;
   min-width: 0;
+  height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-
   opacity: 0;
+  transform-origin: center;
   transform: scale(0.8);
   transition:
     transform 300ms cubic-bezier(.22, 1, .36, 1),
@@ -494,9 +487,7 @@ nav {
 
 .project-panel-text {
   display: flex;
-  flex: 1;
   flex-direction: column;
-  height: 100%;
   justify-content: center;
   padding-left: 3rem;
   width: 100%;
@@ -514,21 +505,21 @@ nav {
   }
 }
 
-.project-panel h2 {
-  font-size: 1.9rem;
-  margin-bottom: 1rem;
-  width: max-content;
-  width: 100%;
-  justify-content: center;
-  height: 30%;
-}
+
 
 .project-panel p {
   width: 100%;
-  line-height: 1.6;
   opacity: 0.85;
   overflow-wrap: anywhere;
-  
+  display: flex;
+  align-items: center;
+}
+
+.project-title-date {
+  display: flex;
+  gap: 50px;
+  white-space: nowrap;
+  align-items: center;
 }
 
 .project-links {
@@ -544,15 +535,15 @@ nav {
 }
 
 .project-images {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 230px;
-  width: min(100%, 34rem);
+  width: 100%;
+  height: 300px;
   aspect-ratio: 16 / 10;
   position: relative;
   padding: 0 2.8rem;
+  background-color: rgb(152, 152, 207);
 }
 
 .main-image {
@@ -560,6 +551,7 @@ nav {
   height: 100%;
   object-fit: contain;
   border-radius: 8px;
+  background-color: green;
 }
 
 .nav-btn {
@@ -594,9 +586,7 @@ nav {
 
 .dither-container {
   position: relative;
-  user-select: none;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none;
+
   -webkit-tap-highlight-color: transparent;
 
 }
@@ -626,7 +616,7 @@ body {
   border: 2px  solid #274436;
   display: flex;
   flex-direction: column;
-  height: 520px;
+  height: 320px;
 }
 
 .pixel-window2 {
@@ -655,6 +645,9 @@ body {
 
 .pixel-window-content {
   display: flex;
+  flex-direction: column;
+  background-color: red;
+  width: 100%;
 }
 
 
@@ -699,6 +692,8 @@ body {
     padding-top: 25vh;
   }
 
+
+
   .header div {
     margin-top: 0;
     line-height: 0.9;
@@ -715,13 +710,13 @@ body {
     
   }
 
-  .projects-container {
-    justify-content: flex-start;
-  }
+
+
 
   .projects-layout {
-    flex-direction: column;
     padding: clamp(1.25rem, 6vw, 6rem);
+    display: flex;
+    flex-direction: column;
   }
 
   .project-panel-text {

@@ -48,7 +48,7 @@ function App() {
                   <p>Computer Science Student</p>
                 </div>
                 <div className="contact-container">
-                  <div className="contact-links">
+                  <div className="action-links">
                       <a href="/NailahAbelResume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
                       <a href="#projects">view projects</a>  
                   </div>

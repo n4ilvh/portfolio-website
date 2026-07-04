@@ -13,8 +13,8 @@ const projects = [
       github: "https://github.com/n4ilvh/portfolio-website",
     },
     images: [
-      "/screenshots/portfolio/1.png",
-      "/screenshots/portfolio/2.png",
+      "../screenshots/portfolio/1.png",
+      "../screenshots/portfolio/2.png",
     ],
   },
   {
@@ -70,30 +70,24 @@ export default function Projects() {
 
   const toggle = (id) => {
     if (active === id) {
-      // start exit animation
       setIsClosing(true);
 
       setTimeout(() => {
         setActive(null);
+        setCurrentImage(0);
         setIsClosing(false);
-      }, 300); // match CSS duration
-    } 
-    
-    else if (active !== null) {
-      setIsClosing(true); // Trigger the current panel's exit animation
+      }, 300);
 
-      setTimeout(() => {
-        setIsClosing(false);
-        setActive(id);        // Mount the new project data
-        setCurrentImage(0);   // Reset carousel index
-      }, 300); // Wait exactly long enough for the exit animation to finish
+      return;
     }
-    
-    else {
-      setIsClosing(false);
+
+    setIsClosing(true);
+
+    setTimeout(() => {
       setActive(id);
       setCurrentImage(0);
-    }
+      setIsClosing(false);
+    }, 300);
   };
 
   useEffect(() => {
@@ -192,9 +186,25 @@ const prevImage = () => {
                   </div>
               </div>
           <div className="pixel-window-content" style={{height: '100%'}}>
+            <div className="project-images">
+              {displayProject.images && (
+                <>
+                  <button onClick={prevImage} className="nav-btn left">←</button>
+
+                  <img
+                    src={displayProject.images[currentImage]}
+                    className="main-image"
+                    alt={displayProject.title}
+                  />
+                  <button onClick={nextImage} className="nav-btn right">→</button>
+                </>
+              )}
+            </div>
             <div className="project-panel-text">
-              <h2>{displayProject.title}</h2>
-              <p>{displayProject.date}</p>
+              <div className="project-title-date">
+                <div style={{fontSize: "larger"}}>{displayProject.title}</div>
+                <div>{displayProject.date}</div>
+              </div>
               <p>{displayProject.desc}</p>
 
               <div className="project-links">
@@ -234,19 +244,6 @@ const prevImage = () => {
                   </a>
                 )}
               </div>
-            </div>
-            <div className="project-images">
-              {displayProject.images && (
-                <>
-                  <button onClick={prevImage} className="nav-btn left">←</button>
-
-                  <img
-                    src={displayProject.images[currentImage]}
-                    className="main-image"
-                  />
-                  <button onClick={nextImage} className="nav-btn right">→</button>
-                </>
-              )}
             </div>
           </div>
       </div>
