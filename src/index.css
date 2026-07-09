@@ -40,7 +40,6 @@ display: none;
 .home {
   position: relative;
   height: 100vh;
-  min-height: auto;
 }
 
 .header {
@@ -381,12 +380,16 @@ nav {
 
 .projects-layout {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 420px 1fr;
   gap: 2rem;
   padding-left: clamp(1.25rem, 3vw, 6rem);
-  padding-top: 50px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+
   font-family: "VCR OSD Mono", monospace;
   color: #2f4f3a;
+  align-items: center;
+  height: 80%;
 }
 
 /* LEFT COLUMN */
@@ -395,6 +398,7 @@ nav {
   flex-direction: column;
   min-width: min(23rem, 100%);
   justify-content: center;
+  line-height: 80px;
 }
 
 /* EACH ROW */
@@ -543,7 +547,6 @@ nav {
   aspect-ratio: 16 / 10;
   position: relative;
   padding: 0 2.8rem;
-  background-color: rgb(152, 152, 207);
 }
 
 .main-image {
@@ -551,7 +554,6 @@ nav {
   height: 100%;
   object-fit: contain;
   border-radius: 8px;
-  background-color: green;
 }
 
 .nav-btn {
@@ -610,17 +612,17 @@ body {
   color: #e0e0e0;
 }
 .pixel-window {
-  background: #8da385; /* Match your light green/tan pane */
+  background: #8da385; 
   border-radius: 0;
   padding: 16px;
   border: 2px  solid #274436;
   display: flex;
   flex-direction: column;
-  height: 320px;
+  height: 100%;
 }
 
 .pixel-window2 {
-  background: #8da385; /* Match your light green/tan pane */
+  background: #8da385; 
   border-radius: 0;
   padding: 16px;
   height: 100%;
@@ -646,7 +648,6 @@ body {
 .pixel-window-content {
   display: flex;
   flex-direction: column;
-  background-color: red;
   width: 100%;
 }
 

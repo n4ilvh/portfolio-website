@@ -186,20 +186,6 @@ const prevImage = () => {
                   </div>
               </div>
           <div className="pixel-window-content" style={{height: '100%'}}>
-            <div className="project-images">
-              {displayProject.images && (
-                <>
-                  <button onClick={prevImage} className="nav-btn left">←</button>
-
-                  <img
-                    src={displayProject.images[currentImage]}
-                    className="main-image"
-                    alt={displayProject.title}
-                  />
-                  <button onClick={nextImage} className="nav-btn right">→</button>
-                </>
-              )}
-            </div>
             <div className="project-panel-text">
               <div className="project-title-date">
                 <div style={{fontSize: "larger"}}>{displayProject.title}</div>
@@ -244,6 +230,20 @@ const prevImage = () => {
                   </a>
                 )}
               </div>
+              <div className="project-images">
+                  {displayProject.images && (
+                    <>
+                      <button onClick={prevImage} className="nav-btn left">←</button>
+
+                      <img
+                        src={displayProject.images[currentImage]}
+                        className="main-image"
+                        alt={displayProject.title}
+                      />
+                      <button onClick={nextImage} className="nav-btn right">→</button>
+                    </>
+                  )}
+                </div>
             </div>
           </div>
       </div>
