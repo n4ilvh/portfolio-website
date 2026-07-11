@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { VscChromeRestore, VscChromeMinimize, VscChromeClose } from "react-icons/vsc";
 import { MdOutlineArrowOutward } from "react-icons/md";
-
+import "./Projects.css";
 
 const projects = [
   {
@@ -36,7 +36,7 @@ const projects = [
     id: 3,
     title: "Phasmophobia Simulator",
     date: "12-2025",
-    desc: "A multithreaded C simulation inspired by Phasmophobia, where hunters and a ghost move and act independently. Built to explore concurrency, shared memory, synchronization, and low-level systems programming concepts.",
+    desc: "A multithreaded C simulation inspired by the 2020 paranormal horror game Phasmophobia, where hunters and a ghost move and act independently. Built to learn concurrency, shared memory, synchronization, and low-level systems programming concepts.",
     links: {
       github: "https://github.com/n4ilvh/phasmophobia-simulator",
     },
@@ -233,6 +233,7 @@ const prevImage = () => {
               <div className="project-images">
                   {displayProject.images && (
                     <>
+                      <div className="image-counter">{currentImage + 1}/{displayProject.images.length}</div>
                       <button onClick={prevImage} className="nav-btn left">←</button>
 
                       <img
