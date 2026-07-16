@@ -63,16 +63,6 @@ html, body, #root {
   justify-content: center;
 }
 
-.content2 {
-  position: relative;
-  color: white;
-  width: 100%;
-  min-height: 100vh;
-  box-sizing: border-box;
-  background-color: #638963;
-}
-
-
 .contact-container {
     height: auto;
     justify-content: center;

@@ -75,10 +75,8 @@ function App() {
 
         
         {/* PROJECTS PAGE */}
-        <section id="projects">
-          <div className="content2">
-            <Projects></Projects>
-          </div>
+        
+            <Projects/>
         </section>
       </div> 
     </Router>

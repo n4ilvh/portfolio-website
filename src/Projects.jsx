@@ -139,120 +139,122 @@ const prevImage = () => {
   
 
   return (
-    <div className="projects">
-      <div className="projects-container">
-        <div className="projects-title">Projects</div>
-        
-        <section className="projects-layout">
-        {/* LEFT LIST */}
-        <div className="pixel-window">
-          <div className="pixel-window-header">
-              <span>project_list.exe</span>
-              <div className="window-controls">
-                <VscChromeMinimize />
-                <VscChromeRestore /> 
-                <VscChromeClose />
-              </div>
-          </div>
-          <div className="pixel-window-content">
-            <div className="projects-list">
-              {projects.map((p) => (
-                <div
-                  key={p.id}
-                  className={`project-row ${active === p.id ? "active" : ""}`}
-                  onClick={() => toggle(p.id)}
-                >
-                  <span className="project-title">{p.title}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+    <section className="projects" id="projects">
+      <div className="projects">
+        <div className="projects-container">
+          <div className="projects-title">Projects</div>
           
-      </div>
-       
-
-  {/* RIGHT PANEL */}
-        {(displayProject && (active !== null || isClosing)) && (
-          <aside
-            className={`project-panel ${isClosing ? "exit" : panelEntered ? "open" : ""}`}
-          >
-            <div className="pixel-window2">
-              <div className="pixel-window-header">
-                  <span>project_details.exe</span>
-                  <div className="window-controls">
-                    <VscChromeMinimize />
-                    <VscChromeRestore /> 
-                    <VscChromeClose />
+          <section className="projects-layout">
+          {/* LEFT LIST */}
+          <div className="pixel-window">
+            <div className="pixel-window-header">
+                <span>project_list.exe</span>
+                <div className="window-controls">
+                  <VscChromeMinimize />
+                  <VscChromeRestore /> 
+                  <VscChromeClose />
+                </div>
+            </div>
+            <div className="pixel-window-content">
+              <div className="projects-list">
+                {projects.map((p) => (
+                  <div
+                    key={p.id}
+                    className={`project-row ${active === p.id ? "active" : ""}`}
+                    onClick={() => toggle(p.id)}
+                  >
+                    <span className="project-title">{p.title}</span>
                   </div>
+                ))}
               </div>
-          <div className="pixel-window-content" style={{height: '100%'}}>
-            <div className="project-panel-text">
-              <div className="project-title-date">
-                <div style={{fontSize: "larger"}}>{displayProject.title}</div>
-                <div>{displayProject.date}</div>
-              </div>
-              <p>{displayProject.desc}</p>
+            </div>
+            
+        </div>
+        
 
-              <div className="project-links">
-                {displayProject.links.chrome && (
-                  <a href={displayProject.links.chrome} target="_blank">  
-                    <div style={{display: "flex", alignItems: "center"}}>
-                      <MdOutlineArrowOutward />
-                      Chrome Web Store
+    {/* RIGHT PANEL */}
+          {(displayProject && (active !== null || isClosing)) && (
+            <aside
+              className={`project-panel ${isClosing ? "exit" : panelEntered ? "open" : ""}`}
+            >
+              <div className="pixel-window2">
+                <div className="pixel-window-header">
+                    <span>project_details.exe</span>
+                    <div className="window-controls">
+                      <VscChromeMinimize />
+                      <VscChromeRestore /> 
+                      <VscChromeClose />
                     </div>
-                  </a>
-                )}
-                
-                {displayProject.links.github && (
-                  <a
-                    href={displayProject.links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div style={{display: "flex", alignItems: "center"}}>
-                      <MdOutlineArrowOutward />
-                      GitHub
-                    </div>
-                    
-                  </a>
-                )}
+                </div>
+            <div className="pixel-window-content" style={{height: '100%'}}>
+              <div className="project-panel-text">
+                <div className="project-title-date">
+                  <div style={{fontSize: "larger"}}>{displayProject.title}</div>
+                  <div>{displayProject.date}</div>
+                </div>
+                <p>{displayProject.desc}</p>
 
-                {displayProject.links.devpost && (
-                  <a
-                    href={displayProject.links.devpost}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div style={{display: "flex", alignItems: "center"}}>
-                      <MdOutlineArrowOutward />
-                      Devpost
-                    </div>
-                  </a>
-                )}
-              </div>
-              <div className="project-images">
-                  {displayProject.images && (
-                    <>
-                      <div className="image-counter">{currentImage + 1}/{displayProject.images.length}</div>
-                      <button onClick={prevImage} className="nav-btn left">←</button>
+                <div className="project-links">
+                  {displayProject.links.chrome && (
+                    <a href={displayProject.links.chrome} target="_blank">  
+                      <div style={{display: "flex", alignItems: "center"}}>
+                        <MdOutlineArrowOutward />
+                        Chrome Web Store
+                      </div>
+                    </a>
+                  )}
+                  
+                  {displayProject.links.github && (
+                    <a
+                      href={displayProject.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div style={{display: "flex", alignItems: "center"}}>
+                        <MdOutlineArrowOutward />
+                        GitHub
+                      </div>
+                      
+                    </a>
+                  )}
 
-                      <img
-                        src={displayProject.images[currentImage]}
-                        className="main-image"
-                        alt={displayProject.title}
-                      />
-                      <button onClick={nextImage} className="nav-btn right">→</button>
-                    </>
+                  {displayProject.links.devpost && (
+                    <a
+                      href={displayProject.links.devpost}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div style={{display: "flex", alignItems: "center"}}>
+                        <MdOutlineArrowOutward />
+                        Devpost
+                      </div>
+                    </a>
                   )}
                 </div>
+                <div className="project-images">
+                    {displayProject.images && (
+                      <>
+                        <div className="image-counter">{currentImage + 1}/{displayProject.images.length}</div>
+                        <button onClick={prevImage} className="nav-btn left">←</button>
+
+                        <img
+                          src={displayProject.images[currentImage]}
+                          className="main-image"
+                          alt={displayProject.title}
+                        />
+                        <button onClick={nextImage} className="nav-btn right">→</button>
+                      </>
+                    )}
+                  </div>
+              </div>
             </div>
-          </div>
+        </div>
+              
+            </aside>
+          )}
+        </section>
+        </div>
       </div>
-            
-          </aside>
-        )}
-      </section>
-      </div>
-    </div>
+    </section>
   );
 }
