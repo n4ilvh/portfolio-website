@@ -296,6 +296,7 @@ body {
   border: 2px  solid #274436;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .pixel-window2 {
@@ -347,8 +348,8 @@ body {
     }
 
     .pixel-window2 {
-        width: 100%;
         height: 100%;
+        width: 100%;
     }
 .projects-layout {
     padding: clamp(1.25rem, 6vw, 6rem);
@@ -387,10 +388,10 @@ body {
   }
 
   .project-images {
-    width: 100%;
-    max-width: 32rem;
-    min-height: 200px;
+    width: 70vw;
+    min-height: 10px;
     padding: 1rem 2rem;
+    align-self: center;
   }
 
   .nav-btn {
