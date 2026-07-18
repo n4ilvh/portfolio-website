@@ -77,7 +77,6 @@ function App() {
         {/* PROJECTS PAGE */}
         
             <Projects/>
-        </section>
       </div> 
     </Router>
   );

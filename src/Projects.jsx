@@ -168,7 +168,6 @@ const prevImage = () => {
                 ))}
               </div>
             </div>
-            
         </div>
         
 

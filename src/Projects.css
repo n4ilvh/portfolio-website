@@ -28,7 +28,7 @@
   line-height: 50%;
   color: #cfbca5;
   text-align: start;
-  padding: clamp(1rem, 3vw, 3rem);
+  padding: clamp(4rem, 6vw, 6rem);
   justify-content: center;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .project-row:hover {
-    background-color: #3b563f3e;
+    background-color: #729167;
 }
 
 .project-row:hover::after {
@@ -391,7 +391,6 @@ body {
     max-width: 32rem;
     min-height: 200px;
     padding: 1rem 2rem;
-    background-color: red;
   }
 
   .nav-btn {
