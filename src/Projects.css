@@ -23,7 +23,7 @@
 .projects-title {
   display: flex;
   width: 100%;
-  font-size: clamp(2.8rem, 11vw, 7.5rem);
+  font-size: calc(5.5rem + 2vw);
   font-family: 'KiwiSoda', sans-serif;
   line-height: 50%;
   color: #cfbca5;
@@ -38,9 +38,8 @@
   grid-template-columns: 420px 1fr;
   gap: 2rem;
   padding-left: clamp(1.25rem, 3vw, 6rem);
-  padding-bottom: 15px;
+  padding-bottom: 55px;
   padding-top: 15px;
-
   font-family: "VCR OSD Mono", monospace;
   color: #2f4f3a;
   align-items: center;
@@ -51,7 +50,7 @@
 .projects-list {
   display: flex;
   flex-direction: column;
-  min-width: min(23rem, 100%);
+  width: 100%;
   justify-content: center;
   line-height: 80px;
 }
@@ -61,13 +60,11 @@
   display: flex;
   align-items: center;
   position: relative;
-  min-width: 100%;
-  
+  width: 100%;
   min-height: 2.1rem;
   padding: 0.35rem 0.8rem 0.35rem 0.55rem;
   cursor: pointer;
   overflow: hidden;
-  isolation: isolate;
 }
 
 .project-row:hover {
@@ -94,16 +91,17 @@
   opacity: 0.85;
   margin-left: 2rem;
   position: relative;
-  display: flex;
   z-index: 1;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
 
 /* ACTIVE (LOCKED OPEN) */
 .project-row.active  {
-  width: calc(100% - 0.7rem);
+  width: 100%;
   border-color: transparent;
 }
 
@@ -342,17 +340,40 @@ body {
 
 
 @media (max-width: 900px), (max-aspect-ratio: 3/4) {
+  .projects-title {
+    font-size: calc(4.5rem + 2vw);
+  }
 
-    .pixel-window {
-        width: 100%;
-    }
+  .pixel-window {
+      width: 100%;
+  }
 
-    .pixel-window2 {
-        height: 100%;
-        width: 100%;
-    }
-.projects-layout {
+  .pixel-window2 {
+      height: 100%;
+      width: 100%;
+
+  }
+
+  .project-title-date {
+    flex-direction: row;
+    align-items: end;
+    text-align: center;
+    white-space: wrap;
+    gap: 10px;
+    
+  }
+
+  .project-title-date div {
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects-layout {
     padding: clamp(1.25rem, 6vw, 6rem);
+    /* padding-right: clamp(1.25rem, 3vw, 6rem); */
     display: flex;
     flex-direction: column;
   }
