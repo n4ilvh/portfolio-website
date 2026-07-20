@@ -68,7 +68,7 @@
 }
 
 .project-row:hover {
-    background-color: #729167;
+    background-color: #74916a94;
 }
 
 .project-row:hover::after {
