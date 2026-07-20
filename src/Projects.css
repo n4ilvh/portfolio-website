@@ -42,7 +42,7 @@
   padding-top: 15px;
   font-family: "VCR OSD Mono", monospace;
   color: #2f4f3a;
-  align-items: center;
+  align-items: stretch;
   height: 80%;
 }
 
@@ -52,7 +52,7 @@
   flex-direction: column;
   width: 100%;
   justify-content: center;
-  line-height: 80px;
+  line-height:2.7;
 }
 
 /* EACH ROW */
@@ -288,6 +288,8 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   color: #e0e0e0;
 }
+
+
 .pixel-window {
   background: #8da385; 
   border-radius: 0;
