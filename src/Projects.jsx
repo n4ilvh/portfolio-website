@@ -238,11 +238,23 @@ const prevImage = () => {
                         <div className="image-counter">{currentImage + 1}/{displayProject.images.length}</div>
                         <button onClick={prevImage} className="nav-btn left">←</button>
 
-                        <img
-                          src={displayProject.images[currentImage]}
-                          className="main-image"
-                          alt={displayProject.title}
-                        />
+                        <div className="image-slider">
+                          <div
+                            className="image-track"
+                            style={{
+                              transform: `translateX(-${currentImage * 100}%)`,
+                            }}
+                          >
+                            {displayProject.images.map((image, index) => (
+                              <img
+                                key={index}
+                                src={image}
+                                className="main-image"
+                                alt={`${displayProject.title} ${index + 1}`}
+                              />
+                            ))}
+                          </div>
+                        </div>
                         <button onClick={nextImage} className="nav-btn right">→</button>
                       </>
                     )}
