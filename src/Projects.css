@@ -378,8 +378,8 @@ body {
   }
 
   .pixel-window2 {
-      height: 600px;
       width: 100%;
+      height: max;
 
   }
 
@@ -409,6 +409,7 @@ body {
 
   .project-panel-text {
     padding-left: 0;
+    height: max-content;
   }
 
   .projects-list {
