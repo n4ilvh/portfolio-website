@@ -29,8 +29,8 @@ const projects = [
       chrome: "https://chromewebstore.google.com/detail/unfollowedexe/kdkgfkbcjjfohpedofakfeldkoejinpp",
     },
     images: [
-      "../screenshots/unfollowed/1.png",
-      "../screenshots/unfollowed/2.png",
+      "../screenshots/unfollowed_exe/1.png",
+      "../screenshots/unfollowed_exe/2.png",
 
     ],
   },
@@ -38,7 +38,7 @@ const projects = [
     id: 3,
     title: "Phasmophobia Simulator",
     date: "12-2025",
-    desc: "A multithreaded C simulation inspired by the 2020 paranormal horror game Phasmophobia, where hunters and a ghost move and act independently. Built to learn concurrency, shared memory, synchronization, and low-level systems programming concepts.",
+    desc: "A multithreaded simulation built with C for my COMP 2401 final project. Inspired by the paranormal horror video game Phasmophobia, where hunters and a ghost move and act independently. Built to learn concurrency, shared memory, synchronization, and low-level systems programming concepts.",
     links: {
       github: "https://github.com/n4ilvh/phasmophobia-simulator",
     },
@@ -56,7 +56,9 @@ const projects = [
       devpost: "https://devpost.com/software/opp-detector",
     },
     images: [
-      "../screenshots/opp/1.jpg",
+      "../screenshots/opp_detector/1.jpg",
+      "../screenshots/opp_detector/2.png",
+      "../screenshots/opp_detector/3.jpg",
     ],
   },
 ];
