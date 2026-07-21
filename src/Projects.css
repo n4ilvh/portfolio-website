@@ -42,7 +42,7 @@
   padding-top: 15px;
   font-family: "VCR OSD Mono", monospace;
   color: #2f4f3a;
-  align-items: stretch;
+  align-items: center;
   height: 80%;
 }
 
@@ -150,9 +150,9 @@
 .project-panel-text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-left: 3rem;
+  padding: 0.5rem;
   width: 100%;
+  height: 45%;
 }
 
 /* PANEL MOTION */
@@ -201,13 +201,17 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 400px;
-  aspect-ratio: 16 / 10;
+  height: 49%;
   position: relative;
   padding: 1.75rem 2.8rem;
+  background-color: #74916a4d;
+  box-sizing: border-box;
+  overflow: hidden;
+
 }
 
 .main-image {
+  flex: 0 0 100%;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -222,7 +226,8 @@
   font-size: 1.25rem;
   line-height: 1;
   right: 0rem;
-  top: 2.1rem;
+  top: 0rem;
+  margin: 1rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -231,6 +236,7 @@
   position: absolute;
   transition: background-color 0.2s ease, transform 0.2s ease;
   z-index: 10;
+  pointer-events: none;
 }
 
 .nav-btn {
@@ -298,17 +304,19 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 600px;
 }
 
 .pixel-window2 {
   background: #8da385; 
   border-radius: 0;
   padding: 16px;
-  height: 100%;
+  height: 600px;
   width: 100%;
   border: 2px  solid #274436;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* The window header row */
@@ -328,6 +336,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
 }
 
 
@@ -342,12 +351,15 @@ body {
 }
 
 .image-slider {
-  width: 600px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
 .image-track {
   display: flex;
+  width: 100%;
+  height: 100%;
   transition: transform 0.45s ease;
 }
 
@@ -361,10 +373,12 @@ body {
 
   .pixel-window {
       width: 100%;
+      max-height: 280px;
+      min-height: 280px;
   }
 
   .pixel-window2 {
-      height: 100%;
+      height: 600px;
       width: 100%;
 
   }
@@ -424,9 +438,7 @@ body {
   }
 
   .project-images {
-    width: 70vw;
-    min-height: 10px;
-    padding: 1rem 2rem;
+    width: 100%;
     align-self: center;
   }
 

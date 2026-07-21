@@ -43,8 +43,8 @@ const projects = [
       github: "https://github.com/n4ilvh/phasmophobia-simulator",
     },
     images: [
-      "../screenshots/phas/1.png",
-      "../screenshots/phas/2.png",
+      "../screenshots/phasmophobia_simulator/1.png",
+      "../screenshots/phasmophobia_simulator/2.png",
     ],
   },
   {
@@ -145,56 +145,58 @@ const prevImage = () => {
       <div className="projects">
         <div className="projects-container">
           <div className="projects-title">Projects</div>
-          
           <section className="projects-layout">
-          {/* LEFT LIST */}
-          <div className="pixel-window">
-            <div className="pixel-window-header">
-                <span>project_list.exe</span>
-                <div className="window-controls">
-                  <VscChromeMinimize />
-                  <VscChromeRestore /> 
-                  <VscChromeClose />
-                </div>
-            </div>
-            <div className="pixel-window-content">
-              <div className="projects-list">
-                {projects.map((p) => (
-                  <div
-                    key={p.id}
-                    className={`project-row ${active === p.id ? "active" : ""}`}
-                    onClick={() => toggle(p.id)}
-                  >
-                    <span className="project-title">{p.title}</span>
+            {/* LEFT LIST */}
+            <div className="pixel-window">
+              <div className="pixel-window-header">
+                  <span>project_list.exe</span>
+                  <div className="window-controls">
+                    <VscChromeMinimize />
+                    <VscChromeRestore /> 
+                    <VscChromeClose />
                   </div>
-                ))}
               </div>
-            </div>
-        </div>
-        
-
-    {/* RIGHT PANEL */}
-          {(displayProject && (active !== null || isClosing)) && (
-            <aside
-              className={`project-panel ${isClosing ? "exit" : panelEntered ? "open" : ""}`}
-            >
-              <div className="pixel-window2">
-                <div className="pixel-window-header">
-                    <span>project_details.exe</span>
-                    <div className="window-controls">
-                      <VscChromeMinimize />
-                      <VscChromeRestore /> 
-                      <VscChromeClose />
+              <div className="pixel-window-content">
+                <div className="projects-list">
+                  {projects.map((p) => (
+                    <div
+                      key={p.id}
+                      className={`project-row ${active === p.id ? "active" : ""}`}
+                      onClick={() => toggle(p.id)}
+                    >
+                      <span className="project-title">{p.title}</span>
                     </div>
+                  ))}
                 </div>
-            <div className="pixel-window-content" style={{height: '100%'}}>
+              </div>
+          </div>
+          {/* RIGHT PANEL */}
+          <aside
+            className={`
+              project-panel
+              ${active !== null ? "open" : ""}
+              ${isClosing ? "exit" : ""}
+              ${displayProject ? "" : "hidden"}
+            `}
+          >
+            <div className="pixel-window2">
+              <div className="pixel-window-header">
+                  <span>project_details.exe</span>
+                  <div className="window-controls">
+                    <VscChromeMinimize />
+                    <VscChromeRestore /> 
+                    <VscChromeClose />
+                  </div>
+              </div>
+            <div className="pixel-window-content">
+              {displayProject && (
+              <>
               <div className="project-panel-text">
-                <div className="project-title-date">
-                  <div style={{fontSize: "larger"}}>{displayProject.title}</div>
-                  <div>{displayProject.date}</div>
-                </div>
-                <p>{displayProject.desc}</p>
-
+                  <div className="project-title-date">
+                    <div style={{fontSize: "larger"}}>{displayProject.title}</div>
+                    <div>{displayProject.date}</div>
+                  </div>
+                  <p>{displayProject.desc}</p>
                 <div className="project-links">
                   {displayProject.links.chrome && (
                     <a href={displayProject.links.chrome} target="_blank">  
@@ -204,7 +206,6 @@ const prevImage = () => {
                       </div>
                     </a>
                   )}
-                  
                   {displayProject.links.github && (
                     <a
                       href={displayProject.links.github}
@@ -218,7 +219,6 @@ const prevImage = () => {
                       
                     </a>
                   )}
-
                   {displayProject.links.devpost && (
                     <a
                       href={displayProject.links.devpost}
@@ -232,41 +232,42 @@ const prevImage = () => {
                     </a>
                   )}
                 </div>
-                <div className="project-images">
-                    {displayProject.images && (
-                      <>
-                        <div className="image-counter">{currentImage + 1}/{displayProject.images.length}</div>
-                        <button onClick={prevImage} className="nav-btn left">←</button>
-
-                        <div className="image-slider">
-                          <div
-                            className="image-track"
-                            style={{
-                              transform: `translateX(-${currentImage * 100}%)`,
-                            }}
-                          >
-                            {displayProject.images.map((image, index) => (
-                              <img
-                                key={index}
-                                src={image}
-                                className="main-image"
-                                alt={`${displayProject.title} ${index + 1}`}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                        <button onClick={nextImage} className="nav-btn right">→</button>
-                      </>
-                    )}
-                  </div>
               </div>
-            </div>
-        </div>
               
-            </aside>
-          )}
-        </section>
-        </div>
+              <div className="project-images">
+                  {displayProject.images && (
+                    <>
+                      <div className="image-counter">{currentImage + 1}/{displayProject.images.length}</div>
+                      <button onClick={prevImage} className="nav-btn left">←</button>
+
+                      <div className="image-slider">
+                        <div
+                          className="image-track"
+                          style={{
+                            transform: `translateX(-${currentImage * 100}%)`,
+                          }}
+                        >
+                          {displayProject.images.map((image, index) => (
+                            <img
+                              key={index}
+                              src={image}
+                              className="main-image"
+                              alt={`${displayProject.title} ${index + 1}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      <button onClick={nextImage} className="nav-btn right">→</button>
+                    </>
+                  )}
+                </div>
+              </>
+              )} 
+            </div>
+          </div>
+        </aside>
+      </section>
+      </div>
       </div>
     </section>
   );
