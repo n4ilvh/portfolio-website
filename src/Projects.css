@@ -386,7 +386,6 @@ body {
   .project-title-date {
     flex-direction: row;
     align-items: end;
-    text-align: center;
     white-space: wrap;
     gap: 10px;
     
@@ -397,7 +396,6 @@ body {
     height: 100%;
     align-items: center;
     display: flex;
-    justify-content: center;
   }
 
   .projects-layout {
