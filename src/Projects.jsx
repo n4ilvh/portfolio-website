@@ -100,6 +100,9 @@ export default function Projects() {
     }
   }, [active]);
 
+  
+  
+
   useEffect(() => {
     if (active === null && !isClosing) {
       setPanelEntered(false);
@@ -130,6 +133,15 @@ export default function Projects() {
 
   const activeProject = projects.find(p => p.id === active);
   const displayProject = activeProject || lastProject;
+
+  useEffect(() => {
+  if (!displayProject) return;
+
+  displayProject.images.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+}, [displayProject]);
 
   const nextImage = () => {
   const total = displayProject.images?.length || 0;
@@ -194,11 +206,11 @@ const prevImage = () => {
               {displayProject && (
               <>
               <div className="project-panel-text">
-                  <div className="project-title-date">
-                    <div style={{fontSize: "larger"}}>{displayProject.title}</div>
-                    <div>{displayProject.date}</div>
-                  </div>
-                  <p>{displayProject.desc}</p>
+                <div className="project-title-date">
+                  <div style={{fontSize: "larger"}}>{displayProject.title}</div>
+                  <div>{displayProject.date}</div>
+                </div>
+                <p>{displayProject.desc}</p>
                 <div className="project-links">
                   {displayProject.links.chrome && (
                     <a href={displayProject.links.chrome} target="_blank">  
@@ -235,7 +247,6 @@ const prevImage = () => {
                   )}
                 </div>
               </div>
-              
               <div className="project-images">
                   {displayProject.images && (
                     <>
