@@ -10,6 +10,7 @@ import Dither from "./Dither";
 import "./App.css";
 import About from "./About";
 import Projects from "./Projects";
+import Experience from "./Experience";
 
 const scrollToSection = (id) => {
   document.getElementById(id)?.scrollIntoView({
@@ -75,8 +76,12 @@ function App() {
 
         
         {/* PROJECTS PAGE */}
-      
-            <Projects/>
+        <Projects/>
+
+        {/* EXP PAGE */}
+        <Experience/>
+
+
       </div> 
     </Router>
   );

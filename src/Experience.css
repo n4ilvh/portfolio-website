@@ -1,0 +1,50 @@
+.experience-content{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    color:#2f4f3a;
+    height:100%;
+}
+
+.experience-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.experience-header h2{
+    font-size:1.8rem;
+}
+
+.experience-header span{
+    border:2px solid #2f4f3a;
+    padding:.2rem .7rem;
+    font-size:.8rem;
+}
+
+.experience-subtitle{
+    font-size:1.15rem;
+    opacity:.9;
+}
+
+.experience-date{
+    opacity:.7;
+    font-size:.95rem;
+}
+
+.experience-content p{
+    line-height:1.6;
+}
+
+.experience-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.6rem;
+    margin-top:auto;
+}
+
+.experience-tags span{
+    border:2px solid #2f4f3a;
+    padding:.3rem .7rem;
+    font-size:.8rem;
+}
