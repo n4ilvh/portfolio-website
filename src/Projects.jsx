@@ -8,7 +8,7 @@ const projects = [
     id: 1,
     title: "Portfolio Site",
     date: "07-2026",
-    desc: "A personal website built to showcase my projects and experiments. Designed with a minimal, responsive layout and custom interactions, and deployed with a custom domain.",
+    desc: "A personal portfolio built to display my projects, technical skills, and design style. Features an retro desktop inspired interface, responsive layouts, and interactive UI elements.",
     links: {
       github: "https://github.com/n4ilvh/portfolio-website",
     },
@@ -23,7 +23,7 @@ const projects = [
     id: 2,
     title: "unfollowed.exe",
     date: "12-2025",
-    desc: "A Google Chrome extension that reveals which users don’t follow you back on Instagram. It compares followers and following all directly in the browser.",
+    desc: "A Google Chrome extension that identifies Instagram users who don't follow you back by comparing your followers and following lists directly in the browser. Built with a focus on privacy, usability, and a simple one-click experience.",
     links: {
       github: "https://github.com/n4ilvh/unfollowed.exe",
       chrome: "https://chromewebstore.google.com/detail/unfollowedexe/kdkgfkbcjjfohpedofakfeldkoejinpp",
@@ -38,8 +38,8 @@ const projects = [
     id: 3,
     title: "Phasmophobia Simulator",
     date: "12-2025",
-    desc: "A multithreaded simulation built with C for my COMP 2401 final project. Inspired by the paranormal horror video game Phasmophobia, where hunters and a ghost move and act independently. Built to learn concurrency, shared memory, synchronization, and low-level systems programming concepts.",
-    links: {
+    desc: "A multithreaded simulation written in C for my COMP 2401 final project, inspired by the video game Phasmophobia. Multiple hunters and a ghost operate concurrently, providing hands-on experience with threads, synchronization, shared memory, and low-level systems programming.",
+      links: {
       github: "https://github.com/n4ilvh/phasmophobia-simulator",
     },
     images: [
@@ -51,8 +51,8 @@ const projects = [
     id: 4,
     title: "Opp Detector",
     date: "03-2025",
-    desc: "A hackathon project that helps users identify potential threats by analyzing real-time data and user input, presented through a simple and accessible interface.",
-    links: {
+    desc: "A hackathon project that uses facial recognition to identify individuals who are not on an approved whitelist. I designed and developed the frontend, creating an accessible interface that displays detection results in real time.",
+      links: {
       devpost: "https://devpost.com/software/opp-detector",
     },
     images: [
