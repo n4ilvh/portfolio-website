@@ -79,7 +79,7 @@ function App() {
         <Projects/>
 
         {/* EXP PAGE */}
-        <Experience/>
+        {/* <Experience/> */}
 
 
       </div> 

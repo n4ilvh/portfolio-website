@@ -35,16 +35,15 @@
 
 .projects-layout {
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: 320px 1fr;
   gap: 2rem;
   padding-left: clamp(1.25rem, 3vw, 6rem);
   padding-bottom: 55px;
   padding-top: 15px;
-  font-family: "VCR OSD Mono", monospace;
   color: #2f4f3a;
   align-items: center;
   height: 80%;
-  
+
 }
 
 /* LEFT COLUMN */
@@ -52,8 +51,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: center;
   line-height:2.7;
+  font-family: "VCR OSD Mono", monospace;
 }
 
 /* EACH ROW */
@@ -66,10 +65,11 @@
   padding: 0.35rem 0.8rem 0.35rem 0.55rem;
   cursor: pointer;
   overflow: hidden;
+  
 }
 
 .project-row:hover {
-    background-color: #74916a94;
+  background-color: #74916a94;
 }
 
 .project-row:hover::after {
@@ -96,6 +96,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  
 }
 
 
@@ -153,7 +154,8 @@
   flex-direction: column;
   padding: 0.5rem;
   width: 100%;
-  height: 45%;
+    gap: 1rem;
+
 }
 
 /* PANEL MOTION */
@@ -179,12 +181,25 @@
 .project-title-date {
   display: flex;
   gap: 50px;
-  white-space: nowrap;
   align-items: center;
+  justify-content: space-between;
+  font-family: "VCR OSD Mono", monospace;
+}
+
+.open-project-title {
+  font-size: 2rem;
+  line-height: 100%;
+
+}
+
+.open-project-date {
+    white-space: nowrap;
+    display: flex;
+    justify-content: end;
+
 }
 
 .project-links {
-  margin-top: 2rem;
   width: 100%;
   display: flex;
 }
@@ -380,7 +395,6 @@ body {
 
   .pixel-window2 {
       width: 100%;
-      height: max;
 
 
   }

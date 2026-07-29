@@ -207,8 +207,8 @@ const prevImage = () => {
               <>
               <div className="project-panel-text">
                 <div className="project-title-date">
-                  <div style={{fontSize: "larger"}}>{displayProject.title}</div>
-                  <div>{displayProject.date}</div>
+                  <div className="open-project-title">{displayProject.title}</div>
+                  <div className="open-project-date">{displayProject.date}</div>
                 </div>
                 <p>{displayProject.desc}</p>
                 <div className="project-links">
