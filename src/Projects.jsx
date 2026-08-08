@@ -7,7 +7,7 @@ const projects = [
   {
     id: 1,
     title: "Portfolio Site",
-    date: "07-2026",
+    date: "10-2025",
     desc: "A personal portfolio built to display my projects, technical skills, and design style. Features an retro desktop inspired interface, responsive layouts, and interactive UI elements.",
     links: {
       github: "https://github.com/n4ilvh/portfolio-website",
@@ -33,7 +33,6 @@ const projects = [
     images: [
       "../screenshots/unfollowed_exe/1.png",
       "../screenshots/unfollowed_exe/2.png",
-
     ],
   },
   {
@@ -56,8 +55,9 @@ const projects = [
     date: "03-2025",
     desc: "A hackathon project that uses facial recognition to identify individuals who are not on an approved whitelist. I designed and developed the frontend, creating an accessible interface that displays detection results in real time.",
       links: {
-      devpost: "https://devpost.com/software/opp-detector",
-    },
+        github: "https://github.com/jasonkdeng/OppDetector",
+        devpost: "https://devpost.com/software/opp-detector",
+      },
     released: true,
     images: [
       "../screenshots/opp_detector/1.jpg",
@@ -78,7 +78,7 @@ const projects = [
     images: [
       "../screenshots/nsbe/1.png",
     ],
-  },
+  }
 ];
 
 export default function Projects() {
