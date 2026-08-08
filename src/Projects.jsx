@@ -12,6 +12,7 @@ const projects = [
     links: {
       github: "https://github.com/n4ilvh/portfolio-website",
     },
+    released: true,
     images: [
       "../screenshots/portfolio/1.png",
       "../screenshots/portfolio/2.png",
@@ -28,6 +29,7 @@ const projects = [
       github: "https://github.com/n4ilvh/unfollowed.exe",
       chrome: "https://chromewebstore.google.com/detail/unfollowedexe/kdkgfkbcjjfohpedofakfeldkoejinpp",
     },
+    released: true,
     images: [
       "../screenshots/unfollowed_exe/1.png",
       "../screenshots/unfollowed_exe/2.png",
@@ -42,6 +44,7 @@ const projects = [
       links: {
       github: "https://github.com/n4ilvh/phasmophobia-simulator",
     },
+    released: true,
     images: [
       "../screenshots/phasmophobia_simulator/1.png",
       "../screenshots/phasmophobia_simulator/2.png",
@@ -55,10 +58,25 @@ const projects = [
       links: {
       devpost: "https://devpost.com/software/opp-detector",
     },
+    released: true,
     images: [
       "../screenshots/opp_detector/1.jpg",
       "../screenshots/opp_detector/2.png",
       "../screenshots/opp_detector/3.jpg",
+    ],
+  },
+  {
+    id: 5,
+    title: "NSBE Carleton Website",
+    date: "06-2026",
+    desc: `Designed and developed a modern, responsive website for the National Society of Black Engineers (NSBE) Carleton chapter. 
+    The site provides students with a central hub to discover upcoming events, explore past events, learn about the organization, 
+    and stay connected with the chapter.`,
+      links: {
+    },
+    released: false,
+    images: [
+      "../screenshots/nsbe/1.png",
     ],
   },
 ];
@@ -212,6 +230,11 @@ const prevImage = () => {
                 </div>
                 <p>{displayProject.desc}</p>
                 <div className="project-links">
+                  {!displayProject.released && (
+                    <div>Coming soon...</div>
+                  )}
+                  
+                  
                   {displayProject.links.chrome && (
                     <a href={displayProject.links.chrome} target="_blank">  
                       <div style={{display: "flex", alignItems: "center"}}>
