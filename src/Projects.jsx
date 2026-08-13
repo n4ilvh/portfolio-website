@@ -5,7 +5,21 @@ import "./Projects.css";
 
 const projects = [
   {
-    id: 1,
+    id: 5,
+    title: "NSBE Carleton Website",
+    date: "06-2026",
+    desc: `Designed and developed a modern, responsive website for the National Society of Black Engineers (NSBE) Carleton chapter. 
+    The site provides students with a central hub to discover upcoming events, explore past events, learn about the organization, 
+    and stay connected with the chapter.`,
+      links: {
+    },
+    released: false,
+    images: [
+      "../screenshots/nsbe/1.png",
+    ],
+  },
+  {
+    id: 4,
     title: "Portfolio Site",
     date: "10-2025",
     desc: "A personal portfolio built to display my projects, technical skills, and design style. Features an retro desktop inspired interface, responsive layouts, and interactive UI elements.",
@@ -21,7 +35,7 @@ const projects = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "unfollowed.exe",
     date: "12-2025",
     desc: "A Google Chrome extension that identifies Instagram users who don't follow you back by comparing your followers and following lists directly in the browser. Built with a focus on privacy, usability, and a simple one-click experience.",
@@ -36,7 +50,7 @@ const projects = [
     ],
   },
   {
-    id: 3,
+    id: 2,
     title: "Phasmophobia Simulator",
     date: "12-2025",
     desc: "A multithreaded simulation written in C for my COMP 2401 final project, inspired by the video game Phasmophobia. Multiple hunters and a ghost operate concurrently, providing hands-on experience with threads, synchronization, shared memory, and low-level systems programming.",
@@ -50,7 +64,7 @@ const projects = [
     ],
   },
   {
-    id: 4,
+    id: 1,
     title: "Opp Detector",
     date: "03-2025",
     desc: "A hackathon project that uses facial recognition to identify individuals who are not on an approved whitelist. I designed and developed the frontend, creating an accessible interface that displays detection results in real time.",
@@ -64,21 +78,8 @@ const projects = [
       "../screenshots/opp_detector/2.png",
       "../screenshots/opp_detector/3.jpg",
     ],
-  },
-  {
-    id: 5,
-    title: "NSBE Carleton Website",
-    date: "06-2026",
-    desc: `Designed and developed a modern, responsive website for the National Society of Black Engineers (NSBE) Carleton chapter. 
-    The site provides students with a central hub to discover upcoming events, explore past events, learn about the organization, 
-    and stay connected with the chapter.`,
-      links: {
-    },
-    released: false,
-    images: [
-      "../screenshots/nsbe/1.png",
-    ],
   }
+  
 ];
 
 export default function Projects() {
