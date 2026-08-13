@@ -154,13 +154,13 @@ export default function Projects() {
   const displayProject = activeProject || lastProject;
 
   useEffect(() => {
-  if (!displayProject) return;
-
-  displayProject.images.forEach((src) => {
-    const img = new Image();
-    img.src = src;
-  });
-}, [displayProject]);
+    projects.forEach((project) => {
+      project.images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    });
+}, []);
 
   const nextImage = () => {
   const total = displayProject.images?.length || 0;
@@ -290,6 +290,8 @@ const prevImage = () => {
                               src={image}
                               className="main-image"
                               alt={`${displayProject.title} ${index + 1}`}
+                              loading="eager"
+                              decoding="async"
                             />
                           ))}
                         </div>
