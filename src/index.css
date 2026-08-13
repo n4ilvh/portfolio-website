@@ -57,6 +57,7 @@ display: none;
   text-align: center;
   color: #527e59;
   font-family: 'KiwiSoda', sans-serif;
+  padding: 5px;
 }
 
 .header p {
@@ -397,7 +398,6 @@ nav {
 
 
   .header div {
-    margin-top: 0;
     font-size: calc(3.5rem + 5vw);
     width: 100%;
   }

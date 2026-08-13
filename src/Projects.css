@@ -184,6 +184,7 @@
   align-items: center;
   justify-content: space-between;
   font-family: "VCR OSD Mono", monospace;
+  white-space: wrap;
 }
 
 .open-project-title {
@@ -398,9 +399,9 @@ body {
   }
 
   .project-title-date {
-    flex-direction: row;
-    align-items: end;
+    flex-direction: column;
     white-space: wrap;
+    align-items: start;
     gap: 10px;
     
   }
@@ -425,6 +426,8 @@ body {
     padding-bottom: 10vw;
     height: auto;
   }
+
+  
 
   .projects-list {
     gap: 1.2rem;
