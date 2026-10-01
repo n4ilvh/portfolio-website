@@ -408,15 +408,12 @@ nav {
 
   .header div {
     font-size: calc(3.5rem + 5vw);
-    width: 100%;
     flex-direction: row;
-    background-color: red;
   }
 
   .header p {
     text-align: center;
     font-size: calc(0.5rem + 2vw);
-
 
   }
 

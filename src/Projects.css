@@ -460,9 +460,9 @@ body {
   }
 
   .nav-btn {
-    width: 1.9rem;
+    width: 10%;
     height: 1.9rem;
-    font-size: 1.1rem;
+    bottom: 0rem;
   }
 
 }
