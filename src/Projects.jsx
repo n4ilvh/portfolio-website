@@ -38,8 +38,6 @@ const projects = [
     images: [
       "../screenshots/portfolio/1.png",
       "../screenshots/portfolio/2.png",
-      "../screenshots/portfolio/3.png",
-      "../screenshots/portfolio/4.png",
     ],
   },
   {
