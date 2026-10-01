@@ -395,6 +395,13 @@ nav {
     padding-top: 25vh;
   }
 
+  .action-links {
+    display: flex;
+    width: 100%;
+    gap: 2.5rem;
+    font-size: calc(1.25rem + 0.5vw);  
+  }
+
 
 
   .header div {

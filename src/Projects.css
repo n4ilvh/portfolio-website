@@ -231,7 +231,6 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 8px;
 }
 
 .image-counter {
@@ -396,6 +395,7 @@ body {
 
   .pixel-window2 {
       width: 100%;
+      height: 750px;
   }
 
   .project-title-date {
@@ -455,7 +455,9 @@ body {
 
   .project-images {
     width: 100%;
+    background-color: red;
     align-self: center;
+    padding: 0px;
   }
 
   .nav-btn {

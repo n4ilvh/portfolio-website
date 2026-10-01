@@ -16,6 +16,14 @@ const projects = [
     released: false,
     images: [
       "../screenshots/nsbe/1.png",
+      "../screenshots/nsbe/2.png",
+      "../screenshots/nsbe/3.png",
+      "../screenshots/nsbe/4.png",
+      "../screenshots/nsbe/5.png",
+      "../screenshots/nsbe/6.png",
+      "../screenshots/nsbe/7.png",
+      "../screenshots/nsbe/8.png",
+      "../screenshots/nsbe/9.png",
     ],
   },
   {
