@@ -58,6 +58,8 @@ display: none;
   color: #527e59;
   font-family: 'KiwiSoda', sans-serif;
   padding: 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .header p {
@@ -407,6 +409,8 @@ nav {
   .header div {
     font-size: calc(3.5rem + 5vw);
     width: 100%;
+    flex-direction: row;
+    background-color: red;
   }
 
   .header p {
