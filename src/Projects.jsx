@@ -11,8 +11,10 @@ const projects = [
     desc: `Designed and developed a modern, responsive website for the National Society of Black Engineers (NSBE) Carleton chapter. 
     The site provides students with a central hub to discover upcoming events, explore past events, learn about the organization, 
     and stay connected with the chapter.`,
-    links: {},
-    released: false,
+    links: {
+      website: "https://www.cunsbe.ca/",
+    },
+    released: true,
     images: [
       "../screenshots/nsbe/1.png",
       "../screenshots/nsbe/2.png",
@@ -228,6 +230,15 @@ export default function Projects() {
                         <div className="project-links">
                           {!displayProject.released && <div>Coming soon...</div>}
 
+                          {displayProject.links.website && (
+                            <a href={displayProject.links.website} target="_blank" rel="noopener noreferrer">
+                              <div style={{ display: "flex", alignItems: "center" }}>
+                                <MdOutlineArrowOutward />
+                                Website
+                              </div>
+                            </a>
+                          )}
+                          
                           {displayProject.links.chrome && (
                             <a href={displayProject.links.chrome} target="_blank" rel="noopener noreferrer">
                               <div style={{ display: "flex", alignItems: "center" }}>
