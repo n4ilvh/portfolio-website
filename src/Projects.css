@@ -293,7 +293,7 @@
   box-shadow: 1px 1px 0 #223029;
 }
 
-/* ---------- IMAGE VIEWER ---------- */
+/* ---------- IMAGE / VIDEO VIEWER ---------- */
 .project-gallery {
   width: 50%;
   min-width: 320px;
@@ -303,7 +303,7 @@
 }
 
 .gallery-stage {
-  height: clamp(20px, 29vw, 390px);
+  height: clamp(220px, 29vw, 390px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -317,6 +317,18 @@
   height: 100%;
   object-fit: contain;
   animation: pixel-in 0.3s steps(4) both;
+}
+
+/* video files reuse .main-image; YouTube embeds fill the stage */
+video.main-image {
+  background: #1d2b22;
+}
+
+.gallery-embed {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .gallery-toolbar {
@@ -433,7 +445,7 @@ body {
   justify-content: center;
 }
 
-/* ---------- MEDIUM SCREENS: image viewer fills the column ---------- */
+/* ---------- MEDIUM SCREENS: viewer fills the column ---------- */
 @media (max-width: 1250px) {
   .project-panel-text {
     overflow: visible;

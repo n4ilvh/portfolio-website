@@ -3,7 +3,13 @@ import { VscChromeRestore, VscChromeMinimize, VscChromeClose } from "react-icons
 import { MdOutlineArrowOutward } from "react-icons/md";
 import "./Projects.css";
 
-
+/*
+  Items in a project's `images` list can be:
+    "../screenshots/x.png"                            -> an image
+    { type: "video", src: "../screenshots/x.mp4" }    -> a video file (optional poster: "../screenshots/x.png")
+    { type: "youtube", id: "VIDEO_ID" }               -> a YouTube embed (the part after v= in the URL)
+  They show in the order you list them.
+*/
 const projects = [
   {
     id: 5,
@@ -63,7 +69,7 @@ const projects = [
     title: "unfollowed.exe",
     date: "12-2025",
     kind: "Chrome extension",
-    role: "Solo project", 
+    role: "Solo project",
     tagline: "A browser extension that shows who doesn't follow you back on Instagram.",
     desc: "Instagram doesn't make it easy to see who you follow that doesn't follow you back. This has been an annoyance of mine, so I created unfollowed.exe. This extension compares your followers and following lists and shows you the difference in one click. Unlike mobile apps, no login is required which complies with Instagram TOS.",
     highlights: [
@@ -100,6 +106,8 @@ const projects = [
     },
     released: true,
     images: [
+      // Uncomment once the file exists in public/screenshots/phasmophobia_simulator/
+      { type: "video", src: "../screenshots/phasmophobia_simulator/demo.mp4" },
       "../screenshots/phasmophobia_simulator/1.png",
       "../screenshots/phasmophobia_simulator/2.png",
     ],
@@ -117,7 +125,7 @@ const projects = [
       "Shows detection results in real time",
       "Focused on an accessible, easy-to-read interface",
     ],
-    tech: ["Gadget", "OpenCV", "QNX", "Raspberry Pi", "Python", "Javascript"], 
+    tech: ["Gadget", "OpenCV", "QNX", "Raspberry Pi", "Python", "Javascript"],
     links: {
       github: "https://github.com/jasonkdeng/OppDetector",
       devpost: "https://devpost.com/software/opp-detector",
@@ -126,8 +134,9 @@ const projects = [
     images: [
       "../screenshots/opp_detector/1.jpg",
       "../screenshots/opp_detector/2.png",
-      "../screenshots/opp_detector/3.jpg",
+      { type: "video", src: "../screenshots/opp_detector/demo.mp4" },
     ],
+    youtube: [""],
   },
 ];
 
@@ -147,6 +156,9 @@ const formatDate = (value) => {
   return name ? `${name} ${year}` : value;
 };
 
+// Turns a plain image path into { type: "image", src } so every item has the same shape
+const getMedia = (item) => (typeof item === "string" ? { type: "image", src: item } : item);
+
 export default function Projects() {
   // First project is open by default, and one project is always open
   const [activeId, setActiveId] = useState(projects[0].id);
@@ -154,6 +166,7 @@ export default function Projects() {
 
   const project = projects.find((p) => p.id === activeId);
   const total = project.images?.length || 0;
+  const media = total > 0 ? getMedia(project.images[currentImage]) : null;
 
   const select = (id) => {
     if (id === activeId) return;
@@ -161,12 +174,14 @@ export default function Projects() {
     setCurrentImage(0);
   };
 
-  // Preload screenshots so swapping between them is instant
+  // Preload screenshots so swapping between them is instant (videos are skipped)
   useEffect(() => {
     projects.forEach((p) => {
-      p.images.forEach((src) => {
+      p.images.forEach((item) => {
+        const m = getMedia(item);
+        if (m.type !== "image") return;
         const img = new Image();
-        img.src = src;
+        img.src = m.src;
       });
     });
   }, []);
@@ -237,23 +252,46 @@ export default function Projects() {
                       {total > 0 && (
                         <div className="project-gallery">
                           <div className="gallery-stage">
-                            <img
-                              key={`${project.id}-${currentImage}`}
-                              src={project.images[currentImage]}
-                              className="main-image"
-                              alt={`${project.title} screenshot ${currentImage + 1} of ${total}`}
-                              decoding="async"
-                            />
+                            {media.type === "video" && (
+                              <video
+                                key={`${project.id}-${currentImage}`}
+                                src={media.src}
+                                poster={media.poster}
+                                className="main-image"
+                                controls
+                                playsInline
+                                preload="metadata"
+                              />
+                            )}
+                            {media.type === "youtube" && (
+                              <iframe
+                                key={`${project.id}-${currentImage}`}
+                                src={`https://www.youtube-nocookie.com/embed/${media.id}`}
+                                title={`${project.title} video`}
+                                className="gallery-embed"
+                                allow="accelerometer; encrypted-media; picture-in-picture; fullscreen"
+                                allowFullScreen
+                              />
+                            )}
+                            {media.type === "image" && (
+                              <img
+                                key={`${project.id}-${currentImage}`}
+                                src={media.src}
+                                className="main-image"
+                                alt={`${project.title} screenshot ${currentImage + 1} of ${total}`}
+                                decoding="async"
+                              />
+                            )}
                           </div>
                           <div className="gallery-toolbar">
                             <span>
-                              PREVIEW_{String(currentImage + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+                              {media.type === "image" ? "PREVIEW" : "VIDEO"}_{String(currentImage + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
                             </span>
                             <div className="gallery-buttons">
-                              <button type="button" onClick={prevImage} disabled={total < 2} aria-label="Previous screenshot">
+                              <button type="button" onClick={prevImage} disabled={total < 2} aria-label="Previous item">
                                 ←
                               </button>
-                              <button type="button" onClick={nextImage} disabled={total < 2} aria-label="Next screenshot">
+                              <button type="button" onClick={nextImage} disabled={total < 2} aria-label="Next item">
                                 →
                               </button>
                             </div>
