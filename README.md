@@ -1,2 +1,2 @@
 Visit here:
-https://www.nailahabel.vip/
+https://www.nailahabel.dev/
