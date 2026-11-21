@@ -1,7 +1,4 @@
-import Image from "../media/selfie.jpg";
-import Border from "../media/border.png";
-import LeftBlob from "../media/left-blob.png"
-import RightBlob from "../media/right-blob.png"
+
 function About() {
   return (
     <div className="about"> 
