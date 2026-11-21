@@ -39,6 +39,7 @@ const projects = [
       "../screenshots/nsbe/7.png",
       "../screenshots/nsbe/8.png",
       "../screenshots/nsbe/9.png",
+      "../screenshots/nsbe/10.png",
     ],
   },
   {
