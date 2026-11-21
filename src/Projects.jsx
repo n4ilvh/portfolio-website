@@ -107,7 +107,6 @@ const projects = [
     },
     released: true,
     images: [
-      // Uncomment once the file exists in public/screenshots/phasmophobia_simulator/
       { type: "video", src: "../screenshots/phasmophobia_simulator/demo.mp4" },
       "../screenshots/phasmophobia_simulator/1.png",
       "../screenshots/phasmophobia_simulator/2.png",
