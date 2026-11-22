@@ -22,13 +22,11 @@ export default function Contact() {
     <div className="contact-inner">
       <p className="contact-eyebrow">// end of file</p>
       <h2 className="contact-heading" id="contact-heading">Contact</h2>
-      <p className="contact-intro">Have a project, opportunity, or just want to say hi? I'd love to hear from you.</p>
       <div className="contact-window">
         <div className="contact-window-bar"><span>send_message.exe</span><div aria-hidden="true"><VscChromeMinimize /><VscChromeRestore /><VscChromeClose /></div></div>
         <div className="contact-window-body">
           <p className="contact-status"><span aria-hidden="true" className="contact-status-dot" /> OPEN TO INTERNSHIPS & CO-OP OPPORTUNITIES</p>
           <h3>Let's connect<span className="contact-cursor" aria-hidden="true">_</span></h3>
-          <p className="contact-description">I'm always interested in learning, collaborating, and building something new.</p>
           <div className="contact-actions">
             <a className="contact-primary" href={`mailto:${email}`}>Send an email <MdOutlineArrowOutward aria-hidden="true" /></a>
             <button type="button" onClick={copyEmail}>{copied ? "Email copied!" : "Copy email"}</button>

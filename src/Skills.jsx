@@ -25,9 +25,7 @@ export default function Skills() {
   return (
     <section className="skills-page" id="skills" aria-labelledby="skills-heading">
       <div className="skills-inner">
-        <p className="skills-eyebrow">// tools of the trade</p>
         <h2 id="skills-heading" className="skills-heading">Skills</h2>
-        <p className="skills-intro">Languages, frameworks, and tools I've used to build projects and learn new things.</p>
         <div className="skills-window">
           <WindowBar name="technical_skills.exe" />
           <div className="skills-window-body">

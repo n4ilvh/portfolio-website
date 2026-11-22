@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { VscChromeRestore, VscChromeMinimize, VscChromeClose } from "react-icons/vsc";
 import { MdOutlineArrowOutward } from "react-icons/md";
-import AsciiStars from "./AsciiStars";
+import AsciiStars from "./ui/AsciiStars";
 
 import "./Projects.css";
 

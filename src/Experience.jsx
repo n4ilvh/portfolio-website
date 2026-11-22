@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { VscChromeRestore, VscChromeMinimize, VscChromeClose } from "react-icons/vsc";
 import { MdOutlineArrowOutward } from "react-icons/md";
-import AsciiBloom from "./AsciiBloom";
+import AsciiBloom from "./ui/AsciiBloom";
 import "./Experience.css";
 
 // Replace dates marked "Confirm dates" before publishing.
