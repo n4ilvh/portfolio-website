@@ -1,0 +1,211 @@
+/* ==========================================================
+   SKILLS SECTION
+   Retro styling shared with Projects and Experience
+   ========================================================== */
+
+.skills-page {
+  width: 100%;
+  background: #6b896d;
+  color: #274436;
+  padding: clamp(4rem, 7vw, 7rem) 1.25rem;
+}
+
+.skills-page *,
+.skills-page *::before,
+.skills-page *::after {
+  box-sizing: border-box;
+}
+
+.skills-inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* ---------- SECTION HEADING ---------- */
+
+.skills-eyebrow {
+  color: #e0e9d8;
+  font-family: VCR, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.13em;
+  text-align: center;
+}
+
+.skills-heading {
+  margin: 0.5rem 0 1rem;
+  color: #cfbca5;
+  font-family: KiwiSoda, sans-serif;
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+}
+
+.skills-intro {
+  max-width: 620px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ---------- RETRO WINDOWS ---------- */
+
+.skills-window {
+  min-width: 0;
+  margin-bottom: 2rem;
+  background: #8da385;
+  border: 2px solid #274436;
+  box-shadow: 6px 6px 0 rgba(29, 58, 39, 0.24);
+}
+
+.skills-window-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.55rem 0.8rem;
+  background: #34583a;
+  color: #d2e2c9;
+  border-bottom: 2px solid #223029;
+  font-family: VCR, monospace;
+  font-size: 0.8rem;
+}
+
+.skills-window-bar > div {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.skills-window-body {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* ---------- SKILL FILTERS ---------- */
+
+.skills-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 2rem;
+}
+
+.skills-filters button {
+  padding: 0.55rem 0.75rem;
+  background: transparent;
+  color: #274436;
+  border: 2px solid #34583a;
+  font-family: VCR, monospace;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.skills-filters button:hover,
+.skills-filters button:focus-visible,
+.skills-filters button.is-active {
+  background: #34583a;
+  color: #e8efe3;
+}
+
+.skills-filters button:focus-visible,
+.skills-github-heading a:focus-visible {
+  outline: 3px solid #cfbca5;
+  outline-offset: 3px;
+}
+
+/* ---------- SKILL CATEGORIES & TAGS ---------- */
+
+.skills-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.skills-group h3 {
+  margin-bottom: 1rem;
+  font-family: VCR, monospace;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.skills-tags span {
+  padding: 0.45rem 0.7rem;
+  background: #34583a;
+  color: #e8efe3;
+  border: 1px solid #223029;
+  font-family: VCR, monospace;
+  font-size: 0.78rem;
+}
+
+/* ---------- GITHUB ACTIVITY ---------- */
+
+.skills-github-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.skills-github-heading h3 {
+  font-family: VCR, monospace;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.skills-github-heading a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  background: #34583a;
+  color: #e8efe3;
+  font-family: VCR, monospace;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.skills-github-calendar,
+.skills-calendar-scroll {
+  overflow-x: auto;
+  padding: 0.25rem 0 1rem;
+}
+
+.skills-calendar-scroll > div {
+  min-width: 720px;
+}
+
+.skills-footnote {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 650px) {
+  .skills-groups {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .skills-github-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-filters button {
+    transition: none;
+  }
+}

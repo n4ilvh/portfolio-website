@@ -8,9 +8,10 @@ import { MdEmail } from "react-icons/md";
 
 import Dither from "./Dither";
 import "./App.css";
-import About from "./About";
 import Projects from "./Projects";
 import Experience from "./Experience";
+import Skills from "./Skills";
+import Contact from "./Contact";
 
 const scrollToSection = (id) => {
   document.getElementById(id)?.scrollIntoView({
@@ -75,11 +76,10 @@ function App() {
         </section>
 
         
-        {/* PROJECTS PAGE */}
-        <Projects/>
-
-        {/* EXP PAGE */}
-        <Experience/>
+        <Projects />
+        <Skills />
+        <Experience />
+        <Contact />
 
 
       </div> 
