@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { VscChromeRestore, VscChromeMinimize, VscChromeClose } from "react-icons/vsc";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import AsciiStars from "./AsciiStars";
+
 import "./Projects.css";
 
 /*
@@ -192,6 +194,7 @@ export default function Projects() {
   return (
     <section className="projects" id="projects">
       <div className="projects">
+        <AsciiStars />
         <div className="projects-container">
           <div className="projects-title">Projects</div>
           <section className="projects-layout">
