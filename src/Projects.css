@@ -295,8 +295,8 @@
 
 /* ---------- IMAGE / VIDEO VIEWER ---------- */
 .project-gallery {
-  width: 50%;
-  min-width: 320px;
+  width: 56%;
+  min-width: 620px;
   margin: 0 auto; /* centers the viewer in the text column */
   border: 2px solid #274436;
   background: #6d876c;
