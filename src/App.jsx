@@ -57,7 +57,7 @@ function App() {
           <div className="content">
                 <div className="header">
                   <div>Nailah Abel</div>
-                  <p>Computer Science Student</p>
+                  <p>Computer Science Student @ Carleton University</p>
                 </div>
                 <div className="contact-container">
                   <div className="action-links">
@@ -73,6 +73,10 @@ function App() {
                   <a href="https://www.linkedin.com/in/nailah-abel/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
                   <a href="mailto:nailah.abel@gmail.com" target="_blank" rel="noopener noreferrer"><MdEmail /></a>
                   {/* <a href="https://monkeytype.com/profile/n4ilvh" target="_blank" rel="noopener noreferrer"><SiMonkeytype /></a> */}
+                </div>
+                <div className="hero-status">
+                  <span className="status-dot" />
+                  Seeking internship & co-op opportunities
                 </div>
                 
             </div>

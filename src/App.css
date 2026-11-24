@@ -30,6 +30,64 @@ html, body, #root {
   text-size-adjust: 100%;
 }
 
+.app {
+  width: 100%;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: clip;
+  padding-bottom: 76px;
+  background: #425e48;
+}
+
+/* ---------- HERO ---------- */
+.app .home {
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+  height: auto;
+  overflow: hidden;
+  background: #9da594;
+}
+
+.home .background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.home .content {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  height: auto;
+  padding: 4rem 1.25rem 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home .header h1 {
+  margin: 0;
+  padding: 5px;
+  font-family: KiwiSoda, sans-serif;
+  font-size: clamp(3.5rem, 8vw, 9rem);
+  font-weight: normal;
+  line-height: 0.9;
+  letter-spacing: 2px;
+  color: #34583a;
+}
+
+.home .header p {
+  margin-top: 0.65rem;
+  font-family: VCR, monospace;
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
 .nav-item {
   user-select: none;
   -webkit-user-select: none;
@@ -37,7 +95,7 @@ html, body, #root {
 }
 
 .app {
-  width: 100vw;
+  width: 100%;
   min-height: 100dvh;
   position: relative;
 }
@@ -68,3 +126,38 @@ html, body, #root {
     justify-content: center;
     padding: 1.25rem 0 1rem;
   }
+
+  .hero-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  font-family: VCR, monospace;
+  font-size: 0.85rem;
+  color: #34583a;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #34583a;
+  border-radius: 50%;
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(52, 88, 58, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px rgba(52, 88, 58, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot {
+    animation: none;
+  }
+}
